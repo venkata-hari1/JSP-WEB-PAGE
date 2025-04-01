@@ -7,14 +7,12 @@ export const StyledBox = styled(Box)(({ theme }) => ({
   gridTemplateColumns:'23% 23% 23% 23%',
   gridGap:'1%',
   height:'100vh',
-  backgroundColor: "purple",
+ 
   [theme.breakpoints.down("md")]: {
     gridTemplateColumns:'100%',
-    backgroundColor: "green",
   },
   [theme.breakpoints.down("sm")]: {
     gridTemplateColumns:'100%',
-    backgroundColor: "orange",
   },
 }));
 export const TypographyStyles=styled(Typography)(({theme})=>({
@@ -22,3 +20,21 @@ export const TypographyStyles=styled(Typography)(({theme})=>({
   border:'1px solid black',
   height:'40vh'
 }))
+
+export const StyledBox1 = styled(Box)(({ theme }) => ({
+  color:'red',
+  fontWeight:'800'
+}));
+
+export const ParentDiv=styled(Box)(({theme})=>({
+    background:'black',
+    height:'100vh',
+    color:'white',
+    [theme.breakpoints.down('md')]:{
+        background:'red',
+    },
+    [theme.breakpoints.down('sm')]:{
+        background:'orange',
+    }
+
+  }))

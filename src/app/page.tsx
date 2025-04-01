@@ -1,14 +1,15 @@
-import { Box, Typography } from '@mui/material'
-import React from 'react'
-import  {StyledBox,TypographyStyles} from './style'
+import { Box, Grid, Typography } from '@mui/material'
+import React, { Fragment } from 'react'
+import  {ParentDiv, StyledBox,StyledBox1,TypographyStyles} from './style'
+import Form from './components/FormOne'
+import Header from './components/Header'
+import Stepper from './components/Stepper'
 
 export default function page() {
   return (
-    <StyledBox>
-    <TypographyStyles>1</TypographyStyles>
-    <Typography>2</Typography>
-    <Typography>3</Typography>
-    <Typography>4</Typography>
-    </StyledBox>
+    <Fragment>
+    <Header/>
+      <Stepper/>
+     </Fragment>
   )
 }
