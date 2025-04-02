@@ -17,7 +17,7 @@ export const StyledBox = styled(Box)(({ theme }) => ({
 }));
 export const TypographyStyles=styled(Typography)(({theme})=>({
   marginTop:'10%',
-  border:'1px solid black',
+  
   height:'40vh'
 }))
 
@@ -34,7 +34,7 @@ export const ParentDiv=styled(Box)(({theme})=>({
         background:'red',
     },
     [theme.breakpoints.down('sm')]:{
-        background:'orange',
+        background:'blue',
     }
 
   }))

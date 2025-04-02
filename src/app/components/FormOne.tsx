@@ -1,9 +1,10 @@
 'use client'
 import React from 'react'
-export default function Form() {
+import Slider from './Slider'
+export default function FormOne() {
   return (
     <div>
-    Form One
+    <Slider/>
     </div>
   )
 }

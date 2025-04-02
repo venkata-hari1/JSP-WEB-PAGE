@@ -12,14 +12,7 @@ const theme = createTheme({
   typography: {
     fontFamily: roboto.style.fontFamily,
   },
-  palette: {
-    primary: {
-      main: "#1976d2", 
-    },
-    background: {
-      default: "#f5f5f5",
-    },
-  },
+  
   breakpoints: {
     values: {
       xs: 0,
