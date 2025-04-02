@@ -1,5 +1,5 @@
 [
-    {"id":1,"main-title":"तेलंगाना गेम चेंजर"},  
+    {"id":1,"maintitle":"तेलंगाना गेम चेंजर"},  
     
     {"id":2, 
      "sections":[
@@ -17,8 +17,8 @@
   },
   
    { "id":3,  
-     "choose-language":{
-     "form-label":"अपनी भाषा चुनें?",
+     "chooselanguage":{
+     "formlabel":"अपनी भाषा चुनें?",
      "options":[
       {"id":1,"language1":"अंग्रेज़ी"},
       {"id":2,"language2":"तेलुगु"},
@@ -32,15 +32,15 @@
   {"id":5,"phone":"फोन नंबर"},
   {"id":6, "voter":{
   
-      "voter-label":"क्या आपके पास तेलंगाना में वोटर आईडी है?",
+      "voterlabel":"क्या आपके पास तेलंगाना में वोटर आईडी है?",
        "status":[{"id":1,"value1":"हां"}, 
                  {"id":2,"value2":"नहीं"}] 
     }
   }, 
   
-  {"id":7, "janasena-member":{
+  {"id":7, "janasenamember":{
   
-      "member-label":"क्या आप जनसेना के सदस्य हैं?",
+      "memberlabel":"क्या आप जनसेना के सदस्य हैं?",
       "option":[{ "id":1,"value1":"हां"},
                 {"id":2,"value2":"हां"}]
   }
@@ -54,8 +54,8 @@
   {"id":13,"pincode":"पिनकोड"},
   {"id":14,"employment":{
   
-      "employment-label":"रोजगार की स्थिति",
-      "employment-status":[
+      "employmentlabel":"रोजगार की स्थिति",
+      "employmentstatus":[
           {"id":1,"sector":"निजी क्षेत्र"},
           {"id":2,"sector":"निजी क्षेत्र"},
           {"id":3,"sector":"स्वरोजगार"},
@@ -66,8 +66,8 @@
   
   
   {"id":15,"education":{
-   "education-label":"शिक्षा",
-   "education-status":[
+   "educationlabel":"शिक्षा",
+   "educationstatus":[
       {"id":1,"class":"10वीं कक्षा"},
       {"id":2,"class":"इंटरमीडिएट"},
       {"id":3,"class":"स्नातक"},
@@ -77,39 +77,39 @@
   },
   
   {"id":16,
-   "family-members":{
-      "familymember-label":"परिवार के कुल सदस्य",
-      "with-you":"आपको शामिल करते हुए"
+   "familymembers":{
+      "familymemberlabel":"परिवार के कुल सदस्य",
+      "withyou":"आपको शामिल करते हुए"
    }
   },
   
-  {"id":17, "adults-members":{
+  {"id":17, "adultsmembers":{
   
-      "adults-label":"18 वर्ष से अधिक आयु के कितने वयस्क हैं?",
-      "genders":[{"id":1,"gender-name":"पुरुष"},
-                 {"id":2,"gender-name":"महिलाएं"}]
+      "adultslabel":"18 वर्ष से अधिक आयु के कितने वयस्क हैं?",
+      "genders":[{"id":1,"gendername":"पुरुष"},
+                 {"id":2,"gendername":"महिलाएं"}]
        }
   },
   
-  {"id":18,"future-voters":{
+  {"id":18,"futurevoters":{
   
-      "future-label":"भविष्य के मतदाता (7-17 वर्ष)?",
-      "genders":[{"id":1,"gender-name":"लड़के"},
-                 {"id":2,"gender-name":"लड़कियां"}  
+      "futurelabel":"भविष्य के मतदाता (7-17 वर्ष)?",
+      "genders":[{"id":1,"gendername":"लड़के"},
+                 {"id":2,"gendername":"लड़कियां"}  
              ]
   }
   },
-  {"id":19, "total-voters":{
-    "voters-label":"परिवार में मतदाताओं की संख्या",
-    "with-you":"आपको शामिल करते हुए"
+  {"id":19, "totalvoters":{
+    "voterslabel":"परिवार में मतदाताओं की संख्या",
+    "withyou":"आपको शामिल करते हुए"
     }
   },
   
-  {"id":20, "govt-schemes":{
+  {"id":20, "govtschemes":{
   
-      "schemes-label":"आप वर्तमान में कौन-कौन सी सरकारी योजनाओं का लाभ उठा रहे हैं?",
+      "schemeslabel":"आप वर्तमान में कौन-कौन सी सरकारी योजनाओं का लाभ उठा रहे हैं?",
       "choose":"(उपयुक्त विकल्प चुनें)",
-      "scheme-options":[
+      "schemeoptions":[
           {"id":1,"option":"शिक्षा लाभ"},
           {"id":2,"option":"पेंशन","type":"( विधवाओं और वृद्धों के लिए )"},
           {"id":3,"option":"विकलांगों के लिए पेंशन"},

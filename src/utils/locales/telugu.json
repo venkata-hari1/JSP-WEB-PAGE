@@ -1,5 +1,5 @@
 [
-    {"id":1,"main-title":"తెలంగాణ గేమ్ ఛేంజర్"},  
+    {"id":1,"maintitle":"తెలంగాణ గేమ్ ఛేంజర్"},  
     
     {"id":2, 
      "sections":[
@@ -17,8 +17,8 @@
   },
   
    { "id":3,  
-     "choose-language":{
-     "form-label":"మీ భాషను ఎంచుకోండి?",
+     "chooselanguage":{
+     "formlabel":"మీ భాషను ఎంచుకోండి?",
      "options":[
       {"id":1,"language1":"ఇంగ్లీష్"},
       {"id":2,"language2":"తెలుగు"},
@@ -31,15 +31,15 @@
   {"id":5,"phone":"ఫోన్ నంబర్"},
   {"id":6, "voter":{
   
-      "voter-label":"మీరు తెలంగాణలో ఓటర్ ఐడి కలిగి ఉన్నారా?",
+      "voterlabel":"మీరు తెలంగాణలో ఓటర్ ఐడి కలిగి ఉన్నారా?",
        "status":[{"id":1,"value1":"అవును"}, 
                  {"id":2,"value2":"కాదు"}] 
     }
   }, 
   
-  {"id":7, "janasena-member":{
+  {"id":7, "janasenamember":{
   
-      "member-label":"మీరు జనసేన సభ్యుడా?",
+      "memberlabel":"మీరు జనసేన సభ్యుడా?",
       "option":[{ "id":1,"value1":"అవును"},
                 {"id":2,"value2":"కాదు"}]
   }
@@ -53,8 +53,8 @@
   {"id":13,"pincode":"పిన్‌కోడ్"},
   {"id":14,"employment":{
   
-      "employment-label":"ఉద్యోగ స్థితి",
-      "employment-status":[
+      "employmentlabel":"ఉద్యోగ స్థితి",
+      "employmentstatus":[
           {"id":1,"sector":"ప్రైవేట్ రంగం"},
           {"id":2,"sector":"ప్రభుత్వ రంగం"},
           {"id":3,"sector":"స్వయం ఉపాధి"},
@@ -65,8 +65,8 @@
   
   
   {"id":15,"education":{
-   "education-label":"Education",
-   "education-status":[
+   "educationlabel":"Education",
+   "educationstatus":[
       {"id":1,"class":"10వ తరగతి"},
       {"id":2,"class":"ఇంటర్మీడియట్"},
       {"id":3,"class":"పట్టభద్రుడు"},
@@ -76,39 +76,39 @@
   },
   
   {"id":16,
-   "family-members":{
-      "familymember-label":"కుటుంబంలోని మొత్తం సభ్యులు",
-      "with-you":"మీరు సహా"
+   "familymembers":{
+      "familymemberlabel":"కుటుంబంలోని మొత్తం సభ్యులు",
+      "withyou":"మీరు సహా"
    }
   },
   
-  {"id":17, "adults-members":{
+  {"id":17, "adultsmembers":{
   
-      "adults-label":"18 సంవత్సరాలు పైబడిన పెద్దవారు ఎంత మంది?",
-      "genders":[{"id":1,"gender-name":"మగవారు"},
-                 {"id":2,"gender-name":"ఆడవారు"}]
+      "adultslabel":"18 సంవత్సరాలు పైబడిన పెద్దవారు ఎంత మంది?",
+      "genders":[{"id":1,"gendername":"మగవారు"},
+                 {"id":2,"gendername":"ఆడవారు"}]
        }
     },
   
-  {"id":18,"future-voters":{
+  {"id":18,"futurevoters":{
   
-      "future-label":"భవిష్యత్ ఓటర్లు (7-17 సంవత్సరాలు)?",
-      "genders":[{"id":1,"gender-name":"అబ్బాయిలు"},
-                 {"id":2,"gender-name":"అమ్మాయిలు"}  
+      "futurelabel":"భవిష్యత్ ఓటర్లు (7-17 సంవత్సరాలు)?",
+      "genders":[{"id":1,"gendername":"అబ్బాయిలు"},
+                 {"id":2,"gendername":"అమ్మాయిలు"}  
              ]
   }
   },
-  {"id":19, "total-voters":{
-    "voters-label":"కుటుంబంలో ఓటర్ల సంఖ్య",
-    "with-you":"మీరు సహా"
+  {"id":19, "totalvoters":{
+    "voterslabel":"కుటుంబంలో ఓటర్ల సంఖ్య",
+    "withyou":"మీరు సహా"
     }
   },
   
-  {"id":20, "govt-schemes":{
+  {"id":20, "govtschemes":{
   
-      "schemes-label":"మీరు ప్రస్తుతం ఏ ప్రభుత్వ పథకాలను పొందుతున్నారు?",
+      "schemeslabel":"మీరు ప్రస్తుతం ఏ ప్రభుత్వ పథకాలను పొందుతున్నారు?",
       "choose":"(అనువైనది ఎంచుకోండి)",
-      "scheme-options":[
+      "schemeoptions":[
           {"id":1,"option":"విద్యా ప్రయోజనాలు"},
           {"id":2,"option":"పింఛను","type":"( విధవలు మరియు వృద్ధులకు )"},
           {"id":3,"option":"వికలాంగులకు పింఛను"},

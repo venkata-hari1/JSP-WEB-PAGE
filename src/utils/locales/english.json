@@ -1,5 +1,5 @@
 [
-  {"id":1,"main-title":"GAME CHANGER OF TELANGANA"},  
+  {"id":1,"maintitle":"GAME CHANGER OF TELANGANA"},  
   
   {"id":2, 
    "sections":[
@@ -17,8 +17,8 @@
 },
 
  { "id":3,  
-   "choose-language":{
-   "form-label":"Choose your language",
+   "chooselanguage":{
+   "formlabel":"Choose your language",
    "options":[
     {"id":1,"language1":"English"},
     {"id":2,"language2":"Telugu"},
@@ -32,15 +32,15 @@
 {"id":5,"phone":"Phone Number"},
 {"id":6, "voter":{
 
-    "voter-label":"Do You have Voter ID in Telangana",
+    "voterlabel":"Do You have Voter ID in Telangana",
      "status":[{"id":1,"value1":"YES"}, 
                {"id":2,"value2":"No"}] 
   }
 }, 
 
-{"id":7, "janasena-member":{
+{"id":7, "janasenamember":{
 
-    "member-label":"Are You a Member of Janasena",
+    "memberlabel":"Are You a Member of Janasena",
     "option":[{ "id":1,"value1":"Yes"},
               {"id":2,"value2":"No"}]
 }
@@ -54,8 +54,8 @@
 {"id":13,"pincode":"Pincode"},
 {"id":14,"employment":{
 
-    "employment-label":"Employeement Status",
-    "employment-status":[
+    "employmentlabel":"Employeement Status",
+    "employmentstatus":[
         {"id":1,"sector":"Private Sector"},
         {"id":2,"sector":"Public Sector"},
         {"id":3,"sector":"Self Employeed"},
@@ -66,8 +66,8 @@
 
 
 {"id":15,"education":{
- "education-label":"Education",
- "education-status":[
+ "educationlabel":"Education",
+ "educationstatus":[
     {"id":1,"class":"10th Class"},
     {"id":2,"class":"Intermediate"},
     {"id":3,"class":"Graduation"},
@@ -77,39 +77,39 @@
 },
 
 {"id":16,
- "family-members":{
-    "familymember-label":"Total Members in Family",
-    "with-you":"including you"
+ "familymembers":{
+    "familymemberlabel":"Total Members in Family",
+    "withyou":"including you"
  }
 },
 
-{"id":17, "adults-members":{
+{"id":17, "adultsmembers":{
 
-    "adults-label":"How Many Adults Above(18+ Years)",
-    "genders":[{"id":1,"gender-name":"Male"},
-               {"id":2,"gender-name":"Female"}]
+    "adultslabel":"How Many Adults Above(18+ Years)",
+    "genders":[{"id":1,"gendername":"Male"},
+               {"id":2,"gendername":"Female"}]
      }
 },
 
-{"id":18,"future-voters":{
+{"id":18,"futurevoters":{
 
-    "future-label":"How Many future Voters (7-17 Years)",
-    "genders":[{"id":1,"gender-name":"Boys"},
-               {"id":2,"gender-name":"Girls"}  
+    "futurelabel":"How Many future Voters (7-17 Years)",
+    "genders":[{"id":1,"gendername":"Boys"},
+               {"id":2,"gendername":"Girls"}  
            ]
 }
 },
-{"id":19, "total-voters":{
-  "voters-label":"No of Voters in the Family",
-  "with-you":"Including You"
+{"id":19, "totalvoters":{
+  "voterslabel":"No of Voters in the Family",
+  "withyou":"Including You"
   }
 },
 
-{"id":20, "govt-schemes":{
+{"id":20, "govtschemes":{
 
-    "schemes-label":"What Government Schemes Are You Currently Receiving?",
+    "schemeslabel":"What Government Schemes Are You Currently Receiving?",
     "choose":"(Choose The Applicable One)",
-    "scheme-options":[
+    "schemeoptions":[
         {"id":1,"option":"Education Benefits"},
         {"id":2,"option":"Pension","type":"( For Widows And Old Age )"},
         {"id":3,"option":"Pension For Disabled"},
