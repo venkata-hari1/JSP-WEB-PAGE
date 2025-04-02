@@ -17,7 +17,7 @@ export const StyledBox = styled(Box)(({ theme }) => ({
 }));
 export const TypographyStyles=styled(Typography)(({theme})=>({
   marginTop:'10%',
-  border:'1px solid black',
+  
   height:'40vh'
 }))
 
