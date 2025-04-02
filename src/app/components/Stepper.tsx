@@ -22,8 +22,13 @@ const steps = [
 export default function VerticalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
 
-  const handleNext = () => {
+  const handleNext = (step:number) => {
+    if(step===0){
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
+    else{
+      setActiveStep(0)
+    }
   };
 
   const handleBack = () => {
@@ -59,7 +64,7 @@ export default function VerticalLinearStepper() {
                 <Button
             
                   variant="contained"
-                  onClick={handleNext}
+                  onClick={()=>handleNext(index)}
                   sx={{ mt: 1, mr: 1 }}
                 >
                   {index === steps.length - 1 ? 'Submit' : 'Next'}
@@ -69,14 +74,7 @@ export default function VerticalLinearStepper() {
           </Step>
         ))}
       </Stepper>
-      {activeStep === steps.length && (
-        <Paper square elevation={0} sx={{ p: 3 }}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
-          <Button onClick={handleReset} sx={{ mt: 1 }}>
-            Reset
-          </Button>
-        </Paper>
-      )}
+     
     </Box>
   );
 }

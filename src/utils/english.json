@@ -1,0 +1,136 @@
+[
+  {"id":1,"main-title":"GAME CHANGER OF TELANGANA"},  
+
+  {"id":2, 
+   "sections":[
+   { 
+    "id":1,
+    "heading":"Janasena’s Vision",
+    "description":"Janasena envisions a self-reliant and progressive society, where every citizen has the opportunity to lead a dignified life. The party believes in fostering sustainable growth through natural farming"
+   },
+   {
+     "id":2,
+     "heading":"Janasena’s Mission",
+     "description":"Janasena’s mission is to empower communities, encourage responsible governance, and drive holistic progress by: Promoting Natural Farming: Supporting farmers in adopting"
+   }
+  ]
+},
+
+ { "id":3,  
+   "choose-language":{
+   "form-label":"Choose your language",
+   "options":[
+    {"id":1,"language1":"English"},
+    {"id":2,"language2":"Telugu"},
+    {"id":3,"language3":"Hindi"}
+  ]
+  }
+},
+
+{"id":4,"name":"Name" },
+
+{"id":5,"phone":"Phone Number"},
+{"id":6, "voter":{
+
+    "voter-label":"Do You have Voter ID in Telangana",
+     "status":[{"id":1,"value1":"YES"}, 
+            {"id":2,"value2":"No"}] 
+  }
+}, 
+
+{"id":7, "janasena-member":{
+
+    "member-label":"Are You a Member of Janasena",
+    "option":[{ "id":1,"value1":"Yes"},
+              {"id":2,"value2":"No"}]
+}
+},
+
+{"id":8,"houseno":"House Number"},
+{"id":9,"district":"Select District"},
+{"id":10,"constituency":"Select Constituency"},
+{"id":11,"divison":"Select Division"},
+{"id":12,"village":"Select Village/ Area"},
+{"id":13,"pincode":"Pincode"},
+{"id":14,"employment":{
+
+    "employment-label":"Employeement Status",
+    "employment-status":[
+        {"id":1,"sector":"Private Sector"},
+        {"id":2,"sector":"Public Sector"},
+        {"id":3,"sector":"Self Employeed"},
+        {"id":4,"sector":"Unemployeed"}
+     ]
+  }
+},
+
+
+{"id":15,"education":{
+ "education-label":"Education",
+ "education-status":[
+    {"id":1,"class":"10th Class"},
+    {"id":2,"class":"Intermediate"},
+    {"id":3,"class":"Graduation"},
+    {"id":4,"class":"Posstgraduation & Above"}
+   ]
+ }
+},
+
+{"id":16,
+ "family-members":{
+    "familymember-label":"Total Members in Family",
+    "with-you":"including you"
+ }
+},
+
+{"id":17, "adults-members":{
+
+    "adults-label":"How Many Adults Above(18+ Years)",
+    "genders":[{"id":1,"gender-name":"Male"},
+               {"id":2,"gender-name":"Female"}]
+     }
+},
+
+{"id":18,"future-voters":{
+
+    "future-label":"How Many future Voters (7-17 Years)",
+    "genders":[{"id":1,"gender-name":"Boys"},
+               {"id":2,"gender-name":"Girls"}  
+           ]
+}
+},
+{"id":19, "total-voters":{
+  "voters-label":"No of Voters in the Family",
+  "with-you":"Including You"
+  }
+},
+
+{"id":20, "govt-schemes":{
+
+    "schemes-label":"What Government Schemes Are You Currently Receiving?",
+    "choose":"(Choose The Applicable One)",
+    "scheme-options":[
+        {"id":1,"option":"Education Benefits"},
+        {"id":2,"option":"Pension","type":"( For Widows And Old Age )"},
+        {"id":3,"option":"Pension For Disabled"},
+        {"id":4,"option":"Medical Benefits"},
+        {"id":5,"option":"Rythu Bandhu"},
+        {"id":6,"option":"Ration"},
+        {"id":7,"option":"TIDCO Houses"}
+    ]
+   }
+},
+
+{"id":21, 
+  "suggestions":{
+ 
+    "heading":"Additional Suggestions / Comments",
+    "description":
+"(Please mention the issues you are facing with the government and what you expect from the JanaSena government)"
+ }
+}
+]
+
+
+ 
+
