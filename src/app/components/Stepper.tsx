@@ -40,7 +40,7 @@ export default function VerticalLinearStepper() {
   };
 
   return (
-    <Box sx={{ width: '100%', mx: 'auto' }}>
+    <Box sx={{ width: '100%', mx: 'auto'}}>
       <Stepper activeStep={activeStep} orientation="vertical" connector={null}
         sx={{
           '& .MuiStepContent-root': { paddingLeft: 0, borderLeft: 'none' }

@@ -34,7 +34,7 @@ export const ParentDiv=styled(Box)(({theme})=>({
         background:'red',
     },
     [theme.breakpoints.down('sm')]:{
-        background:'orange',
+        background:'blue',
     }
 
   }))
