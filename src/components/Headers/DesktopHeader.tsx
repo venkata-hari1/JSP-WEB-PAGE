@@ -1,8 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box } from '@mui/material'
-import { Box_Div } from './Style'
+import { Box_Div, MainTitle } from './Style'
+import { useSelector } from 'react-redux'
+import { RootState } from '../Redux/Store/store'
+import { React_Type } from '@/utils/Types'
 export default function DeskTopHeader() {
+  const selector:React_Type=useSelector((state:RootState)=>state.Language.data)
   return (
     <Box_Div>
     <Image src='/assets/images/pawan.png' 
@@ -11,6 +15,7 @@ export default function DeskTopHeader() {
             sizes="100vw"
             style={{ width: '80%', height: '13vh' }}
             alt='pawan kalay'/>
+          {/* <MainTitle>{selector[0].maintitle}</MainTitle> */}
      </Box_Div>
    
   )
