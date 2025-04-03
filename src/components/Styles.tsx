@@ -7,10 +7,10 @@ export const Typography_Div=styled(Box)(({theme})=>({
     width:'100%',
     height:'100vh',
     [theme.breakpoints.down('md')]:{
-        height:'60vh',
+        height:'50vh',
     },
     [theme.breakpoints.down('sm')]:{
-        height:'60vh',
+        height:'50vh',
     }
 
   }))

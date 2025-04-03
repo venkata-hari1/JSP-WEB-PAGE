@@ -7,6 +7,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {  Mobile_Slider_Container, NextButton, PrevButton, Typography_Div } from "../Styles";
 import Image from 'next/image'
+
 import { React_Type } from "@/utils/Types";
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
@@ -55,14 +56,19 @@ function MobileSlider() {
       <Slider {...settings}>
         {SliderImages.map((slider)=>
          <Typography_Div key={slider.id}>
-          <Image 
+           <img
+            src={slider.src}
+            alt={slider.alt}
+            style={{ width: "100%", height: "100%" ,objectFit:'cover'}}
+          />
+          {/* <Image 
           src={slider.src} 
           width={0}
           height={0}
           sizes="100vw"
           alt={slider.alt}
           style={{ width: '100%', height: '80%' }} 
-        />
+        /> */}
         </Typography_Div>)}
 
        
