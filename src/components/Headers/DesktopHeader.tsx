@@ -15,7 +15,6 @@ export default function DeskTopHeader() {
             sizes="100vw"
             style={{ width: '80%', height: '13vh' }}
             alt='pawan kalay'/>
-          {/* <MainTitle>{selector[0].maintitle}</MainTitle> */}
      </Box_Div>
    
   )

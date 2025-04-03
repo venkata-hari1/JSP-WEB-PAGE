@@ -61,12 +61,13 @@ function DeskTopSlider() {
 
         {SliderImages.map((slider)=>
          <Typography_Div key={slider.id}>
-          <Image src={slider.src} 
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: '100%', height: '75%' }}
-          alt={slider.alt}/>
+          <Image 
+  src={slider.src} 
+  width={1920} 
+  height={1080}
+  alt={slider.alt}
+  style={{ width: '100%', height: '80%' }} 
+/>
         </Typography_Div>)}
       </Slider>
     </DeskTop_Slider_Container>
