@@ -49,7 +49,7 @@ export const Typography_Div=styled(Box)(({theme})=>({
 export const NextButton=styled(Button)(({theme})=>({
     position: "absolute",
     boxShadow:'0 0 4px grey',
-    top: "45%",
+    top: "40%",
     width:"21px",
     left: "1px",
     zIndex: 10,
@@ -62,7 +62,7 @@ export const NextButton=styled(Button)(({theme})=>({
   export const PrevButton=styled(Button)(({theme})=>({
     boxShadow:'0 0 4px grey',
     position: "absolute",
-    top: "45%",
+    top: "40%",
     minWidth:'30px !important',
     minHeight:'30px !important',
     width:"21px !important",
