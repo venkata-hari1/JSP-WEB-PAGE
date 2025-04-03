@@ -42,7 +42,7 @@ function FormOne() {
     <Fragment>
       <Slider />
       <RootContainer>
-        <Grid container sx={{width:'96%'}}>
+        <Grid container sx={{ width: '96%' }}>
           <Grid>
             {(
               t('sections', { returnObjects: true }) as Array<{
@@ -58,7 +58,7 @@ function FormOne() {
                   {Array.isArray(section.description) ? (
                     <>
                       {section.description
-                        .slice(0, expanded === index ? section.description.length : 3) 
+                        .slice(0, expanded === index ? section.description.length : 3)
                         .map((des, idx) => (
                           <Box key={idx} sx={{ mt: 2 }}>
                             <StrongSmallText>{des.subheading}</StrongSmallText>
@@ -67,7 +67,7 @@ function FormOne() {
                         ))}
 
                       {section.description.length > 3 && (
-                        <ButtonText  onClick={() => toggleEvent(index)}>
+                        <ButtonText onClick={() => toggleEvent(index)}>
                           {expanded === index ? section.readless : section.readmore}
                         </ButtonText >
                       )}
@@ -81,13 +81,13 @@ function FormOne() {
                             {expanded === index || !showReadMore
                               ? section.description
                               : `${section.description.slice(0, 350)}...`}
-                           {showReadMore && (
-                            <ButtonText  onClick={() => toggleEvent(index)}>
-                              {expanded === index ? section.readless : section.readmore}
-                            </ButtonText>
-                          )}
+                            {showReadMore && (
+                              <ButtonText onClick={() => toggleEvent(index)}>
+                                {expanded === index ? section.readless : section.readmore}
+                              </ButtonText>
+                            )}
                           </SmallText>
-                        
+
                         </Box>
                       );
                     })()
@@ -107,6 +107,7 @@ function FormOne() {
                     value={option.code}
                     control={
                       <Radio
+                        size='small'
                         color="default"
                         sx={{
                           '&.Mui-checked': {
@@ -115,46 +116,61 @@ function FormOne() {
                         }}
                       />
                     }
-                    label={<MiddleText>{option.language}</MiddleText>}
+                    label={<StrongSmallText>{option.language}</StrongSmallText>}
                   />
                 ))}
               </RadioGroup>
             </FormControl>
             <FormGrid>
               <Box>
-              <FormLabel>Name <Typography component="span" color='red'>*</Typography></FormLabel>
-            <TextField  placeholder='enter name' 
-            fullWidth
-            size='small'
-            slotProps={{
-              input:{startAdornment:
-              <InputAdornment position='start'>
-                <PermIdentityIcon sx={{fontSize:'20px'}}/>
-              </InputAdornment>
+                <FormLabel>Name <Typography component="span" color='red'>*</Typography></FormLabel>
+                <TextField placeholder='enter name'
+                  fullWidth
+                  size='small'
+                  slotProps={{
+                    input: {
+                      startAdornment:
+                        <InputAdornment position='start'>
+                          <PermIdentityIcon sx={{ fontSize: '20px' }} />
+                        </InputAdornment>,
+                          sx: {
+                            "& input": {
+                              height: "3.5vh !important",
+                              fontWeight: "800 !important",
+      
+                            },
+                          },
 
-              }
-            }}
-            />
-            </Box>
-            <ErrorOutlineIcon sx={{marginTop:'40px'}}/>
-            <Box>
-            <FormLabel>Phone Number <Typography component="span" color='red'>*</Typography></FormLabel>
-            <TextField 
-              type='number'
-              size='small'
-              fullWidth
-              slotProps={{
-                input: {
-                  startAdornment: 
-                  <InputAdornment position="start">
-                    <LocalPhoneIcon sx={{fontSize:'18px',marginRight:'8px'}}/>
-                    <Typography component="span">+91</Typography> 
-                  </InputAdornment>,
-                },
-              }}   
-            />
-            </Box>
-            <ErrorOutlineIcon sx={{marginTop:'40px'}}/>
+                    }
+                  }}
+                />
+              </Box>
+              <ErrorOutlineIcon sx={{ marginTop: '40px' }} />
+              <Box>
+                <FormLabel>Phone Number <Typography component="span" color='red'>*</Typography></FormLabel>
+                <TextField
+                  type="number"
+                  size="small"
+                  fullWidth
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <LocalPhoneIcon sx={{ fontSize: "18px", marginRight: "8px" }} />
+                        <Typography component="span">+91</Typography>
+                      </InputAdornment>
+                    ),
+                    sx: {
+                      "& input": {
+                        height: "3.5vh !important",
+                        fontWeight: "800 !important",
+
+                      },
+                    },
+                  }}
+                />;
+
+              </Box>
+              <ErrorOutlineIcon sx={{ marginTop: '40px' }} />
             </FormGrid>
           </Grid>
         </Grid>
