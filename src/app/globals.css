@@ -1,6 +1,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-inter: "Inter", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,6 +13,7 @@
 
 html,
 body {
+  font-family: var(--font-inter) !important;
   max-width: 100vw;
   overflow-x: hidden;
 }

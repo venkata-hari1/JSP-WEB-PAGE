@@ -1,5 +1,5 @@
 [
-  {"id":1,"main-title":"GAME CHANGER OF TELANGANA"},  
+  {"id":1,"maintitle":"GAME CHANGER OF TELANGANA"},  
   
   {"id":2, 
    "sections":[
@@ -7,7 +7,7 @@
     "id":1,
     "heading":"Janasena’s Vision",
     "description":"Janasena envisions a self-reliant and progressive society, where every citizen has the opportunity to lead a dignified life. The party believes in fostering sustainable growth through natural farming, empowering villages, promoting religious harmony, ensuring quality education, supporting self-employment, and nurturing youth leadership. With a commitment to transparency and ethical governance, Janasena strives to create a resilient nation that stands against corruption and works towards inclusive development."
-   },
+  },
    {
      "id":2,
      "heading":"Janasena’s Mission",
@@ -17,12 +17,12 @@
 },
 
  { "id":3,  
-   "choose-language":{
-   "form-label":"Choose your language",
+   "chooselanguage":{
+   "formlabel":"Choose your language",
    "options":[
-    {"id":1,"language1":"English"},
-    {"id":2,"language2":"Telugu"},
-    {"id":3,"language3":"Hindi"}
+    {"id":1,"language":"English"},
+    {"id":2,"language":"Telugu"},
+    {"id":3,"language":"Hindi"}
   ]
   }
 },

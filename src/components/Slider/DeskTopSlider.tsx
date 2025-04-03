@@ -9,6 +9,8 @@ import Image from 'next/image'
 import {  NextButton, PrevButton, Typography_Div, DeskTop_Slider_Container } from "../Styles";
 import { React_Type } from "@/utils/Types";
 import DeskTopHeader from "../Headers/DesktopHeader";
+import { useSelector } from "react-redux";
+import { RootState } from "../Redux/Store/store";
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 const NextArrow = ({ onClick }:React_Type) => {
@@ -54,18 +56,18 @@ function DeskTopSlider() {
   return (
     <DeskTop_Slider_Container>
     <DeskTopHeader/>
+
       <Slider {...settings}>
+
         {SliderImages.map((slider)=>
          <Typography_Div key={slider.id}>
           <Image src={slider.src} 
             width={0}
             height={0}
             sizes="100vw"
-            style={{ width: '100%', height: '80%' }}
+            style={{ width: '100%', height: '75%' }}
           alt={slider.alt}/>
         </Typography_Div>)}
-
-       
       </Slider>
     </DeskTop_Slider_Container>
   );
