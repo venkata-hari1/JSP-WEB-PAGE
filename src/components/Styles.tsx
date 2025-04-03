@@ -35,17 +35,19 @@ export const Typography_Div=styled(Box)(({theme})=>({
     position: "relative",
     display:'none',
     [theme.breakpoints.down('md')]:{
+       height:'50vh',
         display:'block',
     },
     [theme.breakpoints.down('sm')]:{
         display:'block',
+        height:'50vh',
     }
 
   }))
 export const NextButton=styled(Button)(({theme})=>({
     position: "absolute",
     boxShadow:'0 0 4px grey',
-    top: "40%",
+    top: "35%",
     width:"21px",
     left: "1px",
     zIndex: 10,
@@ -58,7 +60,7 @@ export const NextButton=styled(Button)(({theme})=>({
   export const PrevButton=styled(Button)(({theme})=>({
     boxShadow:'0 0 4px grey',
     position: "absolute",
-    top: "40%",
+    top: "35%",
     minWidth:'30px !important',
     minHeight:'30px !important',
     width:"21px !important",
