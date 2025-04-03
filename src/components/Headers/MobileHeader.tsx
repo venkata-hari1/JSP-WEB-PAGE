@@ -1,10 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box } from '@mui/material'
+import pawan from "@/utils/assets/images/pawan.png";
 export default function MobileHeader() {
   return (
     <Box sx={{display:{lg:'none',xs:'block',md:'block'}}}>
-    <Image src='/assets/images/pawan.png' 
+    <Image src={pawan}
             width={0}
             height={0}
             sizes="100vw"

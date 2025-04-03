@@ -5,11 +5,12 @@ import { Box_Div, MainTitle } from './Style'
 import { useSelector } from 'react-redux'
 import { RootState } from '../Redux/Store/store'
 import { React_Type } from '@/utils/Types'
+import pawan from "@/utils/assets/images/pawan.png";
 export default function DeskTopHeader() {
   const selector:React_Type=useSelector((state:RootState)=>state.Language.data)
   return (
     <Box_Div>
-    <Image src='/assets/Images/Pawan.png' 
+    <Image src={pawan} 
             width={0}
             height={0}
             sizes="100vw"
