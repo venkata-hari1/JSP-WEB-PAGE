@@ -59,6 +59,7 @@ function MobileSlider() {
           src={slider.src} 
           width={1920} 
           height={1080}
+          unoptimized
           alt={slider.alt}
           style={{ width: '100%', height: '80%' }} 
         />
