@@ -44,11 +44,11 @@ function MobileSlider() {
     prevArrow: <PrevArrow />,
   };
   const SliderImages = [
-    { id: 1, src: "/assets/images/slider-1.jpg", alt: "Slider 1 description" },
-    { id: 2, src: "/assets/images/slider-2.jpg", alt: "Slider 2 description" },
-    { id: 3, src: "/assets/images/slider-3.jpg", alt: "Slider 3 description" },
-    { id: 4, src: "/assets/images/slider-4.jpg", alt: "Slider 4 description" },
-    { id: 5, src: "/assets/images/slider-5.jpg", alt: "Slider 5 description" },
+    { id: 1, src: "/slider-1.jpg", alt: "Slider 1 description" },
+    { id: 2, src: "/slider-2.jpg", alt: "Slider 2 description" },
+    { id: 3, src: "/slider-3.jpg", alt: "Slider 3 description" },
+    { id: 4, src: "/slider-4.jpg", alt: "Slider 4 description" },
+    { id: 5, src: "/slider-5.jpg", alt: "Slider 5 description" },
   ];
   return (
     <Mobile_Slider_Container>
