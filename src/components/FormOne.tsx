@@ -1,15 +1,17 @@
-'use client';
+"use client";
 
 import React, { Fragment, useEffect, useState } from 'react';
 import Slider from './Slider/MobileSlider';
 import { Box, Button, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { BigText, SmallText } from './ReusableStyles/Styles';
+import { BigText, ButtonText, MiddleText, SmallText, StrongSmallText } from './ReusableStyles/Styles';
+import { React_Type } from '@/utils/Types';
 
 function FormOne() {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState<null | number>(null);
   const [selectedLanguage, setSelectedLanguage] = useState<string>('en');
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const storedLanguage = localStorage.getItem('selectedLanguage');
@@ -21,7 +23,6 @@ function FormOne() {
   }, []);
 
   const toggleEvent = (id: number) => {
-    console.log(id)
     setExpanded((prev) => (prev === id ? null : id));
   };
 
@@ -29,7 +30,7 @@ function FormOne() {
     const newLanguage = e.target.value;
     i18n.changeLanguage(newLanguage);
     setSelectedLanguage(newLanguage);
-    setExpanded(null)
+    setExpanded(null);
     if (typeof window !== 'undefined') {
       localStorage.setItem('selectedLanguage', newLanguage);
     }
@@ -40,29 +41,63 @@ function FormOne() {
       <Slider />
       <Box>
         <Grid container>
-          <Grid size={{xs:12,md:12,lg:12}}>
-        
-            {(t('sections', { returnObjects: true }) as Array<{ heading: string; description: string; readmore: string; readless: string }>).map((section, index) => (
-              <Box key={index}>
-                <BigText>{section.heading}</BigText>
-                <SmallText>
-                  {expanded === index ? section.description : section.description.slice(0, 350)}
-                  {section.description.length > 350 && (
-                    <Button
-                      size="small"
-                      sx={{ textTransform: 'none', fontWeight: '900', color: 'red', ml: 1, fontSize: '14px' }}
-                      onClick={() => toggleEvent(index)}
-                    >
-                      {expanded === index ? section.readless : section.readmore}
-                    </Button>
+          <Grid>
+            {(
+              t('sections', { returnObjects: true }) as Array<{
+                heading: string;
+                description: React_Type | Array<{ subheading: string; content: string }>;
+                readmore: string;
+                readless: string;
+              }>
+            ).map((section, index) => {
+              return (
+                <Box key={index} sx={{ mb: 3 }}>
+                  <BigText>{section.heading}</BigText>
+                  {Array.isArray(section.description) ? (
+                    <>
+                      {section.description
+                        .slice(0, expanded === index ? section.description.length : 3) 
+                        .map((des, idx) => (
+                          <Box key={idx} sx={{ mt: 2 }}>
+                            <StrongSmallText>{des.subheading}</StrongSmallText>
+                            <SmallText>{des.content}</SmallText>
+                          </Box>
+                        ))}
+
+                      {section.description.length > 3 && (
+                        <ButtonText  onClick={() => toggleEvent(index)}>
+                          {expanded === index ? section.readless : section.readmore}
+                        </ButtonText >
+                      )}
+                    </>
+                  ) : (
+                    (() => {
+                      const showReadMore = section.description.length > 350;
+                      return (
+                        <Box>
+                          <SmallText>
+                            {expanded === index || !showReadMore
+                              ? section.description
+                              : `${section.description.slice(0, 350)}...`}
+                          <ButtonText  onClick={() => toggleEvent(index)}>
+                              {expanded === index ? section.readless : section.readmore}
+                            </ButtonText>
+                          </SmallText>
+                         
+                        </Box>
+                      );
+                    })()
                   )}
-                </SmallText>
-              </Box>
-            ))}
+
+                </Box>
+              )
+            })}
             <FormControl>
-              <h3>{t('chooselanguage.formlabel')}?</h3>
+              <MiddleText>{t('chooselanguage.formlabel')}</MiddleText>
               <RadioGroup row name="language-selection" value={selectedLanguage} onChange={handleLanguageChange}>
-                {(t('chooselanguage.options', { returnObjects: true }) as Array<{ language: string; code: string }>).map((option, index) => (
+                {(
+                  t('chooselanguage.options', { returnObjects: true }) as Array<{ language: string; code: string }>
+                ).map((option, index) => (
                   <FormControlLabel
                     key={index}
                     value={option.code}
@@ -76,7 +111,7 @@ function FormOne() {
                         }}
                       />
                     }
-                    label={<p>{option.language}</p>}
+                    label={<MiddleText>{option.language}</MiddleText>}
                   />
                 ))}
               </RadioGroup>
