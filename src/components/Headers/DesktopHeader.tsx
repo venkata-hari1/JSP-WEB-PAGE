@@ -9,7 +9,7 @@ export default function DeskTopHeader() {
   const selector:React_Type=useSelector((state:RootState)=>state.Language.data)
   return (
     <Box_Div>
-    <Image src='/assets/images/pawan.png' 
+    <Image src='/assets/images/Pawan.png' 
             width={0}
             height={0}
             sizes="100vw"
