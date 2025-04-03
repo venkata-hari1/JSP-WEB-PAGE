@@ -7,12 +7,10 @@ export const Typography_Div=styled(Box)(({theme})=>({
     width:'100%',
     height:'100vh',
     [theme.breakpoints.down('md')]:{
-        height:'360px',
-        background:'red',
+        height:'60vh',
     },
     [theme.breakpoints.down('sm')]:{
-        height:'360px',
-        background:'orange',
+        height:'60vh',
     }
 
   }))
@@ -37,11 +35,9 @@ export const Typography_Div=styled(Box)(({theme})=>({
     position: "relative",
     display:'none',
     [theme.breakpoints.down('md')]:{
-        height:'360px',
         display:'block',
     },
     [theme.breakpoints.down('sm')]:{
-        height:'360px',
         display:'block',
     }
 

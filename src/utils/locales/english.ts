@@ -51,6 +51,8 @@ export const English = {
         { language: "Telugu", code: "te" },
         { language: "Hindi", code: "hi" }
       ]
-    }
+    },
+    name:'Name',
+
   }
 }
