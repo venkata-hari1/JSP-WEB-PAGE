@@ -66,6 +66,7 @@ function DeskTopSlider() {
   width={1920} 
   height={1080}
   alt={slider.alt}
+  unoptimized
   style={{ width: '100%', height: '80%' }} 
 />
         </Typography_Div>)}
