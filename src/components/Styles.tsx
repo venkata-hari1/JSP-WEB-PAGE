@@ -34,6 +34,7 @@ export const Typography_Div=styled(Box)(({theme})=>({
   export const Mobile_Slider_Container=styled(Box)(({theme})=>({
     position: "relative",
     display:'none',
+    marginTop:'20%',
     [theme.breakpoints.down('md')]:{
        height:'50vh',
         display:'block',

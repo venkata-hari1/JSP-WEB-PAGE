@@ -125,6 +125,7 @@ function FormOne() {
               <FormLabel>Name <Typography component="span" color='red'>*</Typography></FormLabel>
             <TextField  placeholder='enter name' 
             fullWidth
+            size='small'
             slotProps={{
               input:{startAdornment:
               <InputAdornment position='start'>
@@ -139,8 +140,8 @@ function FormOne() {
             <Box>
             <FormLabel>Phone Number <Typography component="span" color='red'>*</Typography></FormLabel>
             <TextField 
-             
               type='number'
+              size='small'
               fullWidth
               slotProps={{
                 input: {
