@@ -42,7 +42,7 @@ function FormOne() {
     <Fragment>
       <Slider />
       <RootContainer>
-        <Grid container sx={{width:'90%'}}>
+        <Grid container sx={{width:'96%'}}>
           <Grid>
             {(
               t('sections', { returnObjects: true }) as Array<{
