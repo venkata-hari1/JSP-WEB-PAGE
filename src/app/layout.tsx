@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
       <AppRouterCacheProvider>
       <Styledroot>{children}</Styledroot>
-        </AppRouterCacheProvider>
+      </AppRouterCacheProvider>
       </body>
     </html>
   );

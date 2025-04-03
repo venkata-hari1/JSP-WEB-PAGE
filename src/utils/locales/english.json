@@ -1,0 +1,137 @@
+[
+  {"id":1,"main-title":"GAME CHANGER OF TELANGANA"},  
+  
+  {"id":2, 
+   "sections":[
+   { 
+    "id":1,
+    "heading":"Janasena’s Vision",
+    "description":"Janasena envisions a self-reliant and progressive society, where every citizen has the opportunity to lead a dignified life. The party believes in fostering sustainable growth through natural farming, empowering villages, promoting religious harmony, ensuring quality education, supporting self-employment, and nurturing youth leadership. With a commitment to transparency and ethical governance, Janasena strives to create a resilient nation that stands against corruption and works towards inclusive development."
+   },
+   {
+     "id":2,
+     "heading":"Janasena’s Mission",
+     "description":"Janasena’s mission is to empower communities, encourage responsible governance, and drive holistic progress by: Promoting Natural Farming: Supporting farmers in adopting eco-friendly and chemical-free agricultural practices. Providing access to organic farming resources, modern techniques, and sustainable water management. Strengthening Religious Harmony: Encouraging unity among communities by fostering respect for all beliefs and celebrating cultural diversity. Revitalizing Villages: Enhancing rural infrastructure with reliable water supply, sanitation, roads, and healthcare facilities. Promoting digital literacy and creating employment opportunities in villages. Ensuring Quality Education: Making education accessible to all, focusing on skill-based learning, digital education, and career-oriented training. Supporting Self-Employment: Empowering small-scale entrepreneurs and startups through financial aid, mentorship, and access to markets. Encouraging innovation and local enterprises. Fighting Corruption: Establishing strict transparency measures, ensuring public accountability, and eliminating corruption at all levels of governance. Empowering Youth: Equipping the youth with industry-relevant skills, leadership training, and opportunities for self-development. Encouraging active participation in societal growth and decision-making. Janasena is committed to building a future where communities thrive through collective effort, transparent, leadership, and sustainable progress."
+   }
+  ]
+},
+
+ { "id":3,  
+   "choose-language":{
+   "form-label":"Choose your language",
+   "options":[
+    {"id":1,"language1":"English"},
+    {"id":2,"language2":"Telugu"},
+    {"id":3,"language3":"Hindi"}
+  ]
+  }
+},
+
+{"id":4,"name":"Name" },
+
+{"id":5,"phone":"Phone Number"},
+{"id":6, "voter":{
+
+    "voter-label":"Do You have Voter ID in Telangana",
+     "status":[{"id":1,"value1":"YES"}, 
+               {"id":2,"value2":"No"}] 
+  }
+}, 
+
+{"id":7, "janasena-member":{
+
+    "member-label":"Are You a Member of Janasena",
+    "option":[{ "id":1,"value1":"Yes"},
+              {"id":2,"value2":"No"}]
+}
+},
+
+{"id":8,"houseno":"House Number"},
+{"id":9,"district":"Select District"},
+{"id":10,"constituency":"Select Constituency"},
+{"id":11,"divison":"Select Division"},
+{"id":12,"village":"Select Village/ Area"},
+{"id":13,"pincode":"Pincode"},
+{"id":14,"employment":{
+
+    "employment-label":"Employeement Status",
+    "employment-status":[
+        {"id":1,"sector":"Private Sector"},
+        {"id":2,"sector":"Public Sector"},
+        {"id":3,"sector":"Self Employeed"},
+        {"id":4,"sector":"Unemployeed"}
+     ]
+  }
+},
+
+
+{"id":15,"education":{
+ "education-label":"Education",
+ "education-status":[
+    {"id":1,"class":"10th Class"},
+    {"id":2,"class":"Intermediate"},
+    {"id":3,"class":"Graduation"},
+    {"id":4,"class":"Posstgraduation & Above"}
+   ]
+ }
+},
+
+{"id":16,
+ "family-members":{
+    "familymember-label":"Total Members in Family",
+    "with-you":"including you"
+ }
+},
+
+{"id":17, "adults-members":{
+
+    "adults-label":"How Many Adults Above(18+ Years)",
+    "genders":[{"id":1,"gender-name":"Male"},
+               {"id":2,"gender-name":"Female"}]
+     }
+},
+
+{"id":18,"future-voters":{
+
+    "future-label":"How Many future Voters (7-17 Years)",
+    "genders":[{"id":1,"gender-name":"Boys"},
+               {"id":2,"gender-name":"Girls"}  
+           ]
+}
+},
+{"id":19, "total-voters":{
+  "voters-label":"No of Voters in the Family",
+  "with-you":"Including You"
+  }
+},
+
+{"id":20, "govt-schemes":{
+
+    "schemes-label":"What Government Schemes Are You Currently Receiving?",
+    "choose":"(Choose The Applicable One)",
+    "scheme-options":[
+        {"id":1,"option":"Education Benefits"},
+        {"id":2,"option":"Pension","type":"( For Widows And Old Age )"},
+        {"id":3,"option":"Pension For Disabled"},
+        {"id":4,"option":"Medical Benefits"},
+        {"id":5,"option":"Rythu Bandhu"},
+        {"id":6,"option":"Ration"},
+        {"id":7,"option":"TIDCO Houses"}
+    ]
+   }
+},
+
+{"id":21, 
+  "suggestions":{
+ 
+    "heading":"Additional Suggestions / Comments",
+    "description":
+"(Please mention the issues you are facing with the government and what you expect from the JanaSena government)",
+"placedtext":"Share your concerns regarding government policies, challenges you are facing, and your expectations from the JanaSena government..."
+ }
+}
+]
+
+
+ 
+
