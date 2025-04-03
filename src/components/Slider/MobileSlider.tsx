@@ -62,19 +62,15 @@ function MobileSlider() {
       <Slider {...settings}>
         {SliderImages.map((slider)=>
          <Typography_Div key={slider.id}>
-           <img
-            src={slider.src.src}
-            alt={slider.alt}
-            style={{ width: "100%", height: "100%" ,objectFit:'cover'}}
-          />
-          {/* <Image 
+          
+          <Image 
           src={slider.src} 
           width={0}
           height={0}
           sizes="100vw"
           alt={slider.alt}
           style={{ width: '100%', height: '80%' }} 
-        /> */}
+        /> 
         </Typography_Div>)}
 
        
