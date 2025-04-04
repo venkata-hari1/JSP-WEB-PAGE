@@ -2,7 +2,7 @@
 
 import React, { Fragment, useEffect, useState } from 'react';
 import Slider from './Slider/MobileSlider';
-import { Box, Button, FormControl, FormControlLabel, FormLabel, Grid, InputAdornment, Radio, RadioGroup, TextField, Typography } from '@mui/material';
+import { Box, FormControl, FormControlLabel, FormLabel, Grid, InputAdornment,Radio, RadioGroup, TextField, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { BigText, ButtonText, FormGrid, FormLabelText, MiddleText, RadioButtonText, RootContainer, SmallText, StrongSmallText } from './ReusableStyles/Styles';
 import { React_Type } from '@/utils/Types';
@@ -10,15 +10,11 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { useStyles } from './MakeStyles/Style';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from './Redux/Store/store';
-import { setValue } from './Redux/Reducers/Language';
 function FormOne() {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState<null | number>(null);
   const [selectedLanguage, setSelectedLanguage] = useState<string>('en');
-  const { classes }: any = useStyles();
-  const dispatch=useDispatch<AppDispatch>()
+  const {classes}:any = useStyles();
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const storedLanguage = localStorage.getItem('selectedLanguage');
@@ -41,14 +37,12 @@ function FormOne() {
       localStorage.setItem('selectedLanguage', newLanguage);
     }
   };
-const handleNext=()=>{
-  dispatch(setValue(false))
-}
+
   return (
     <Fragment>
       <Slider />
       <RootContainer>
-        <Grid container sx={{ width: '93%' }} mb={2}>
+        <Grid container sx={{ width: '93%' }}>
           <Grid>
             {(
               t('sections', { returnObjects: true }) as Array<{
@@ -130,26 +124,26 @@ const handleNext=()=>{
                 <FormLabelText>{t('name')} <Typography component="span" color='red'>*</Typography></FormLabelText>
                 <TextField placeholder={t('placeholder')}
                   fullWidth
-
-                  classes={{ root: classes.textfield }}
+           
+                  classes={{root:classes.textfield}}
                   InputProps={{
                     classes: {
                       notchedOutline: classes.outlineBorder,
                     },
                     startAdornment: (
                       <InputAdornment position='start'>
-                        <PermIdentityIcon sx={{ fontSize: '20px', color: 'red' }} />
+                        <PermIdentityIcon sx={{ fontSize: '20px',color:'red' }} />
                       </InputAdornment>
                     )
                   }}
                 />
               </Box>
-              <ErrorOutlineIcon sx={{ marginTop: '35px', color: '#889095' }} />
+              <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
               <Box>
                 <FormLabelText>{t('phone')}<Typography component="span" color='red'>*</Typography></FormLabelText>
                 <TextField
                   type="number"
-                  classes={{ root: classes.textfield }}
+                  classes={{root:classes.textfield}}
                   fullWidth
                   InputProps={{
                     classes: {
@@ -157,7 +151,7 @@ const handleNext=()=>{
                     },
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LocalPhoneIcon sx={{ fontSize: "18px", marginRight: "8px", color: 'red' }} />
+                        <LocalPhoneIcon sx={{ fontSize: "18px", marginRight: "8px",color:'red' }} />
                         <Typography component="span">+91</Typography>
                       </InputAdornment>
                     ),
@@ -165,16 +159,12 @@ const handleNext=()=>{
                 />
 
               </Box>
-              <ErrorOutlineIcon sx={{ marginTop: '35px', color: '#889095' }} />
+              <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
             </FormGrid>
           </Grid>
         </Grid>
       </RootContainer>
-      <Box className={classes.btncontainer}>
-        <Button className={classes.nextbtn} variant="outlined" onClick={handleNext}>
-          Next
-        </Button>
-      </Box>
+      
     </Fragment>
   );
 }
