@@ -33,7 +33,6 @@ function FormOne() {
     const newLanguage = e.target.value;
     i18n.changeLanguage(newLanguage);
     setSelectedLanguage(newLanguage);
-    setExpanded(null);
     if (typeof window !== 'undefined') {
       localStorage.setItem('selectedLanguage', newLanguage);
     }

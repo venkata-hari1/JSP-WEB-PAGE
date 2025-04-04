@@ -50,7 +50,8 @@ export default function VerticalLinearStepper() {
               <Box className={classes.btncontainer}>
             
                {index === 1&& <Button
-                
+                 className={classes.backbtn}
+                  variant="outlined"
                   disabled={activeStep !== 1} 
                   onClick={handleBack}
                   sx={{ mt: 1 }}

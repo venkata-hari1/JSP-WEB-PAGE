@@ -1,6 +1,16 @@
+import { telugudistrictData } from "./Districts/telugudistrictData";
+
 export const Telugu = {
   translation: {
     maintitle: "తెలంగాణ గేమ్ ఛేంజర్",
+    districtData:telugudistrictData ,
+SelectDistrict: 'జిల్లా ఎంచుకోండి*',
+SelectConstituency: 'నియోజకవర్గాన్ని ఎంచుకోండి*',
+SelectDivision: 'డివిజన్ ఎంచుకోండి*',
+SelectVillageArea: 'గ్రామం/ప్రాంతం ఎంచుకోండి*',
+HNO: 'ఇల్లు/నంబర్',
+hplaceholder: "ఇల్లు నంబర్ నమోదు చేయండి",
+Pincode: "పిన్‌కోడ్",
     sections: [
       {
         heading: "జనసేనా విజన్",
