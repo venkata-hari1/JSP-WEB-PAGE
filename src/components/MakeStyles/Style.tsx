@@ -8,6 +8,7 @@ export const useStyles = makeStyles()((theme) => ({
   textfield:{
     "& input": {
       height: "3.6vh !important",
+      fontSize:'14px !important'
     },
   },
   outlineBorder: {

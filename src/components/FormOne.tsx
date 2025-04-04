@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import Slider from './Slider/MobileSlider';
 import { Box, Button, Card, FormControl, FormControlLabel, FormLabel, Grid, InputAdornment,Radio, RadioGroup, TextField, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { BigText, ButtonText, FormGrid, MiddleText, RootContainer, SmallText, StrongSmallText } from './ReusableStyles/Styles';
+import { BigText, ButtonText, FormGrid, FormLabelText, MiddleText, RadioButtonText, RootContainer, SmallText, StrongSmallText } from './ReusableStyles/Styles';
 import { React_Type } from '@/utils/Types';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
@@ -115,15 +115,15 @@ function FormOne() {
                         classes={{ root: classes.radioChecked }}
                       />
                     }
-                    label={<StrongSmallText>{option.language}</StrongSmallText>}
+                    label={<RadioButtonText>{option.language}</RadioButtonText>}
                   />
                 ))}
               </RadioGroup>
             </FormControl>
             <FormGrid>
               <Box>
-                <FormLabel>Name <Typography component="span" color='red'>*</Typography></FormLabel>
-                <TextField placeholder='enter name'
+                <FormLabelText>{t('name')} <Typography component="span" color='red'>*</Typography></FormLabelText>
+                <TextField placeholder={t('placeholder')}
                   fullWidth
                   size='small'
                   classes={{root:classes.textfield}}
@@ -141,7 +141,7 @@ function FormOne() {
               </Box>
               <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
               <Box>
-                <FormLabel>Phone Number <Typography component="span" color='red'>*</Typography></FormLabel>
+                <FormLabelText>{t('phone')}<Typography component="span" color='red'>*</Typography></FormLabelText>
                 <TextField
                   type="number"
                   size="small"
