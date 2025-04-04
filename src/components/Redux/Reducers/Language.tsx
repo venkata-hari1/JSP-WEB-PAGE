@@ -11,11 +11,11 @@ const languages: Record<string, any> = {
   Telugu,
 };
 type IState={
-  loading:boolean,
+  value:boolean,
   data:React_Type,
 }
 const initialState:IState = {
-  loading: false,
+  value: true,
   data: English, 
 };
 
@@ -27,9 +27,12 @@ export const Language_Slice = createSlice({
       state.data = languages[action.payload] || English;
    
     },
+    setValue:(state,action)=>{
+      state.value=action.payload
+    }
    
   },
 });
 
-export const { setLanguage} = Language_Slice.actions;
+export const { setLanguage,setValue} = Language_Slice.actions;
 export default Language_Slice.reducer;

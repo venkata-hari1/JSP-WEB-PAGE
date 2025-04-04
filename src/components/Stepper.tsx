@@ -1,77 +1,16 @@
-'use client';
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepContent from '@mui/material/StepContent';
-import Button from '@mui/material/Button';
-import FormOne from './FormOne';
-import FormTwo from './FormTwo';
-import { useStyles } from './MakeStyles/Style';
-import { React_Type } from '@/utils/Types';
-const steps = [
-  {
-    content: <FormOne/>,
-  },
-  {
-    content: <FormTwo/>,
-  },
-];
+"use client"
+import React from 'react'
+import FormOne from './FormOne'
+import FormTwo from './FormTwo'
+import { useSelector } from 'react-redux'
+import { RootState } from './Redux/Store/store'
 
-export default function VerticalLinearStepper() {
-  const [activeStep, setActiveStep] = React.useState(0);
-  const {classes}:React_Type=useStyles()
-  const handleNext = (step:number) => {
-    if(step===0){
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    }
-    else{
-      setActiveStep(0)
-    }
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
-  };
-
+export default function Stepper() {
+  const value=useSelector((state:RootState)=>state.Language.value)
+  console.log(value,"hari")
   return (
-    <Box sx={{ width: '100%', mx: 'auto'}}>
-      <Stepper activeStep={activeStep} orientation="vertical" connector={null}
-        classes={{root:classes.stepper}}  
-      >
-        {steps.map((step, index) => (
-          <Step key={index}>
-            <StepContent>
-              {step.content}
-              <Box className={classes.btncontainer}>
-            
-               {index === 1&& <Button
-                 className={classes.backbtn}
-                  variant="outlined"
-                  disabled={activeStep !== 1} 
-                  onClick={handleBack}
-                  sx={{ mt: 1 }}
-                >
-                  Back
-                </Button>}
-                <Button
-                  className={classes.nextbtn}
-                  variant="outlined"
-                  onClick={()=>handleNext(index)}
-                  sx={{ mt: 1, mr: 1 }}
-                >
-                  {index === steps.length - 1 ? 'Submit' : 'Next'}
-                </Button>
-              </Box>
-            </StepContent>
-          </Step>
-        ))}
-      </Stepper>
-     
-    </Box>
-  );
+    <div>
+      {value?<FormOne/>:<FormTwo/>}
+    </div>
+  )
 }
