@@ -16,6 +16,9 @@ export const useStyles = makeStyles()((theme) => ({
     borderRadius:'8px !important',
   },
   selecttextfield: {
+    '& .MuiInputLabel-root': {
+      fontSize: '14px', 
+    },
     "& label": {
     whiteSpace: "nowrap",
     overflow: "hidden",
