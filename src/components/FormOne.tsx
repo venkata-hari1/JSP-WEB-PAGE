@@ -2,11 +2,13 @@
 
 import React, { Fragment, useEffect, useState } from 'react';
 import Slider from './Slider/MobileSlider';
-import { Box, Button, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from '@mui/material';
+import { Box, Button, Card, FormControl, FormControlLabel, FormLabel, Grid, IconButton, InputAdornment, InputLabel, Radio, RadioGroup, TextField, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { BigText, ButtonText, MiddleText, SmallText, StrongSmallText } from './ReusableStyles/Styles';
+import { BigText, ButtonText, FormGrid, MiddleText, RootContainer, SmallText, StrongSmallText } from './ReusableStyles/Styles';
 import { React_Type } from '@/utils/Types';
-
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 function FormOne() {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState<null | number>(null);
@@ -39,8 +41,8 @@ function FormOne() {
   return (
     <Fragment>
       <Slider />
-      <Box>
-        <Grid container>
+      <RootContainer>
+        <Grid container sx={{ width: '93%' }}>
           <Grid>
             {(
               t('sections', { returnObjects: true }) as Array<{
@@ -56,16 +58,18 @@ function FormOne() {
                   {Array.isArray(section.description) ? (
                     <>
                       {section.description
-                        .slice(0, expanded === index ? section.description.length : 3) 
+                        .slice(0, expanded === index ? section.description.length : 3)
                         .map((des, idx) => (
-                          <Box key={idx} sx={{ mt: 2 }}>
-                            <StrongSmallText>{des.subheading}</StrongSmallText>
-                            <SmallText>{des.content}</SmallText>
-                          </Box>
+                          <Typography component='p' key={idx}>
+                            < StrongSmallText as='span'>{des.subheading}</ StrongSmallText>
+                            <SmallText as='span'>{des.content}</SmallText>.
+                          </Typography>
+
+
                         ))}
 
                       {section.description.length > 3 && (
-                        <ButtonText  onClick={() => toggleEvent(index)}>
+                        <ButtonText onClick={() => toggleEvent(index)}>
                           {expanded === index ? section.readless : section.readmore}
                         </ButtonText >
                       )}
@@ -79,11 +83,13 @@ function FormOne() {
                             {expanded === index || !showReadMore
                               ? section.description
                               : `${section.description.slice(0, 350)}...`}
-                          <ButtonText  onClick={() => toggleEvent(index)}>
-                              {expanded === index ? section.readless : section.readmore}
-                            </ButtonText>
+                            {showReadMore && (
+                              <ButtonText onClick={() => toggleEvent(index)}>
+                                {expanded === index ? section.readless : section.readmore}
+                              </ButtonText>
+                            )}
                           </SmallText>
-                         
+
                         </Box>
                       );
                     })()
@@ -92,7 +98,7 @@ function FormOne() {
                 </Box>
               )
             })}
-            <FormControl>
+            <FormControl fullWidth>
               <MiddleText>{t('chooselanguage.formlabel')}</MiddleText>
               <RadioGroup row name="language-selection" value={selectedLanguage} onChange={handleLanguageChange}>
                 {(
@@ -103,6 +109,7 @@ function FormOne() {
                     value={option.code}
                     control={
                       <Radio
+                        size='small'
                         color="default"
                         sx={{
                           '&.Mui-checked': {
@@ -111,14 +118,65 @@ function FormOne() {
                         }}
                       />
                     }
-                    label={<MiddleText>{option.language}</MiddleText>}
+                    label={<StrongSmallText>{option.language}</StrongSmallText>}
                   />
                 ))}
               </RadioGroup>
             </FormControl>
+            <FormGrid>
+              <Box>
+                <FormLabel>Name <Typography component="span" color='red'>*</Typography></FormLabel>
+                <TextField placeholder='enter name'
+                  fullWidth
+                  size='small'
+                  slotProps={{
+                    input: {
+                      startAdornment:
+                        <InputAdornment position='start'>
+                          <PermIdentityIcon sx={{ fontSize: '20px' }} />
+                        </InputAdornment>,
+                      sx: {
+                        "& input": {
+                          height: "3.5vh !important",
+                        
+
+                        },
+                      },
+
+                    }
+                  }}
+                />
+              </Box>
+              <ErrorOutlineIcon sx={{ marginTop: '40px' }} />
+              <Box>
+                <FormLabel>Phone Number <Typography component="span" color='red'>*</Typography></FormLabel>
+                <TextField
+                  type="number"
+                  size="small"
+                  fullWidth
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <LocalPhoneIcon sx={{ fontSize: "18px", marginRight: "8px" }} />
+                        <Typography component="span">+91</Typography>
+                      </InputAdornment>
+                    ),
+                    sx: {
+                      "& input": {
+                        height: "3.5vh !important",
+                        fontWeight: "800 !important",
+
+                      },
+                    },
+                  }}
+                />;
+
+              </Box>
+              <ErrorOutlineIcon sx={{ marginTop: '40px' }} />
+            </FormGrid>
           </Grid>
         </Grid>
-      </Box>
+      </RootContainer>
     </Fragment>
   );
 }

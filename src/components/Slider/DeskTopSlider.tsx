@@ -9,8 +9,12 @@ import Image from 'next/image'
 import {  NextButton, PrevButton, Typography_Div, DeskTop_Slider_Container } from "../Styles";
 import { React_Type } from "@/utils/Types";
 import DeskTopHeader from "../Headers/DesktopHeader";
-import { useSelector } from "react-redux";
-import { RootState } from "../Redux/Store/store";
+import slider1 from "@/utils/assets/images/slider-1.jpg";
+import slider2 from "@/utils/assets/images/slider-2.jpg";
+import slider3 from "@/utils/assets/images/slider-3.jpg";
+import slider4 from "@/utils/assets/images/slider-4.jpg";
+import slider5 from "@/utils/assets/images/slider-5.jpg";
+;
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 const NextArrow = ({ onClick }:React_Type) => {
@@ -47,11 +51,11 @@ function DeskTopSlider() {
     prevArrow: <PrevArrow />,
   };
   const SliderImages = [
-    { id: 1, src: "/assets/images/slider-1.jpg", alt: "Slider 1 description" },
-    { id: 2, src: "/assets/images/slider-2.jpg", alt: "Slider 2 description" },
-    { id: 3, src: "/assets/images/slider-3.jpg", alt: "Slider 3 description" },
-    { id: 4, src: "/assets/images/slider-4.jpg", alt: "Slider 4 description" },
-    { id: 5, src: "/assets/images/slider-5.jpg", alt: "Slider 5 description" },
+    { id: 1, src: slider1, alt: "Slider 1 description" },
+    { id: 2, src: slider2, alt: "Slider 2 description" },
+    { id: 3, src: slider3, alt: "Slider 3 description" },
+    { id: 4, src: slider4, alt: "Slider 4 description" },
+    { id: 5, src: slider5, alt: "Slider 5 description" },
   ];
   return (
     <DeskTop_Slider_Container>
