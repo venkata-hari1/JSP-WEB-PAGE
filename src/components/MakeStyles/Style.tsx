@@ -26,7 +26,7 @@ export const useStyles = makeStyles()((theme) => ({
     maxWidth: "95%",
   },
     "& .MuiInputBase-root": {
-      height: "5.5vh !important",
+      height: "auto !important",
       fontSize: '14px !important',
     },
   },

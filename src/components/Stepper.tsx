@@ -11,10 +11,10 @@ import { useStyles } from './MakeStyles/Style';
 import { React_Type } from '@/utils/Types';
 const steps = [
   {
-    content: <FormOne />,
+    content: <FormOne/>,
   },
   {
-    content: <FormTwo />,
+    content: <FormTwo/>,
   },
 ];
 

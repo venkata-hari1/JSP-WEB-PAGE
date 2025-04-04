@@ -75,7 +75,7 @@ export const English = {
     placeholder:'Enter Your Name',
     voter: {
       voterlabel: "Do You have Voter ID in Telangana",
-      status: [{ value: "YES" }, { value: "No" }],
+      status: [{ value: "Yes" }, { value: "No" }],
     },
     
     janasenamember:{

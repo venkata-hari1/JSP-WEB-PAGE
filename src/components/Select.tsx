@@ -91,6 +91,7 @@ export default function LocationSelector() {
       <FormControl  classes={{ root: classes.selecttextfield}}>
         <InputLabel>{t('SelectDistrict')}</InputLabel>
         <Select
+         style={{ height: 30 }}
           value={selectedDistrict}
           onChange={handleDistrictChange}    
           input={
@@ -120,7 +121,7 @@ export default function LocationSelector() {
           label={t('SelectConstituency')}
           input={
             <OutlinedInput
-              label={t('SelectDistrict')}
+              label={t('SelectConstituency')}
               classes={{ notchedOutline: classes.selectoutlineBorder }}
             
             />
@@ -146,7 +147,7 @@ export default function LocationSelector() {
           label={t('SelectDivision')}
           input={
             <OutlinedInput
-              label={t('SelectDistrict')}
+              label={t('SelectDivision')}
               classes={{ notchedOutline: classes.selectoutlineBorder }}
             
             />
@@ -175,7 +176,7 @@ export default function LocationSelector() {
           label={t('SelectVillageArea')}
           input={
             <OutlinedInput
-              label={t('SelectDistrict')}
+              label={t('SelectVillageArea')}
               classes={{ notchedOutline: classes.selectoutlineBorder }}
             
             />

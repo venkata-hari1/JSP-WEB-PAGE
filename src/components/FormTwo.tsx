@@ -6,10 +6,9 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import { useTranslation } from 'react-i18next';
 import { useStyles } from './MakeStyles/Style';
-import { FormGrid, FormLabelText } from './ReusableStyles/Styles';
+import { FormGrid, FormLabelText, RadioButtonText, SmallText } from './ReusableStyles/Styles';
 import Select from './Select';
 export default function FormTwo() {
   const { t, i18n } = useTranslation();
@@ -20,7 +19,7 @@ export default function FormTwo() {
       <Grid size={{ xs: 12, md: 12, lg: 12 }} >
         <Box display="flex" flexDirection="row">
           <FormControl>
-            <FormLabel sx={{ color: "#333333", fontSize: 14 }}>{t('voter.voterlabel')}</FormLabel>
+            <SmallText>{t('voter.voterlabel')}</SmallText>
             <RadioGroup row
 
               name="radio-buttons-group">
@@ -39,7 +38,7 @@ export default function FormTwo() {
                       }}
                     />
                   }
-                  label={option.value}
+                  label={<RadioButtonText>{option.value}</RadioButtonText>}
                 />
               ))}
             </RadioGroup>
@@ -49,7 +48,7 @@ export default function FormTwo() {
       <Grid size={{ xs: 12, md: 12, lg: 12 }} >
         <Box sx={{ display: "flex", flexDirection: "row" }}>
           <FormControl>
-            <FormLabel sx={{ color: "#333333", fontSize: 14 }}>{t('janasenamember.memberlabel')}</FormLabel>
+            <SmallText>{t('janasenamember.memberlabel')}</SmallText>
             <RadioGroup row
 
               name="radio-buttons-group">
@@ -69,7 +68,7 @@ export default function FormTwo() {
                       }}
                     />
                   }
-                  label={option.value}
+                  label={<RadioButtonText>{option.value}</RadioButtonText>}
                 />
               ))}
 
