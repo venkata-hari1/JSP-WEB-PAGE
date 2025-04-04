@@ -2,18 +2,19 @@
 
 import React, { Fragment, useEffect, useState } from 'react';
 import Slider from './Slider/MobileSlider';
-import { Box, Button, Card, FormControl, FormControlLabel, FormLabel, Grid, IconButton, InputAdornment, InputLabel, Radio, RadioGroup, TextField, Typography } from '@mui/material';
+import { Box, Button, Card, FormControl, FormControlLabel, FormLabel, Grid, InputAdornment,Radio, RadioGroup, TextField, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { BigText, ButtonText, FormGrid, MiddleText, RootContainer, SmallText, StrongSmallText } from './ReusableStyles/Styles';
 import { React_Type } from '@/utils/Types';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { useStyles } from './MakeStyles/Style';
 function FormOne() {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState<null | number>(null);
   const [selectedLanguage, setSelectedLanguage] = useState<string>('en');
-
+  const {classes}:any = useStyles();
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const storedLanguage = localStorage.getItem('selectedLanguage');
@@ -111,11 +112,7 @@ function FormOne() {
                       <Radio
                         size='small'
                         color="default"
-                        sx={{
-                          '&.Mui-checked': {
-                            color: '#FF0000',
-                          },
-                        }}
+                        classes={{ root: classes.radioChecked }}
                       />
                     }
                     label={<StrongSmallText>{option.language}</StrongSmallText>}
@@ -129,50 +126,42 @@ function FormOne() {
                 <TextField placeholder='enter name'
                   fullWidth
                   size='small'
-                  slotProps={{
-                    input: {
-                      startAdornment:
-                        <InputAdornment position='start'>
-                          <PermIdentityIcon sx={{ fontSize: '20px' }} />
-                        </InputAdornment>,
-                      sx: {
-                        "& input": {
-                          height: "3.5vh !important",
-                        
-
-                        },
-                      },
-
-                    }
+                  classes={{root:classes.textfield}}
+                  InputProps={{
+                    classes: {
+                      notchedOutline: classes.outlineBorder,
+                    },
+                    startAdornment: (
+                      <InputAdornment position='start'>
+                        <PermIdentityIcon sx={{ fontSize: '20px',color:'red' }} />
+                      </InputAdornment>
+                    )
                   }}
                 />
               </Box>
-              <ErrorOutlineIcon sx={{ marginTop: '40px' }} />
+              <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
               <Box>
                 <FormLabel>Phone Number <Typography component="span" color='red'>*</Typography></FormLabel>
                 <TextField
                   type="number"
                   size="small"
+                  classes={{root:classes.textfield}}
                   fullWidth
                   InputProps={{
+                    classes: {
+                      notchedOutline: classes.outlineBorder,
+                    },
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LocalPhoneIcon sx={{ fontSize: "18px", marginRight: "8px" }} />
+                        <LocalPhoneIcon sx={{ fontSize: "18px", marginRight: "8px",color:'red' }} />
                         <Typography component="span">+91</Typography>
                       </InputAdornment>
                     ),
-                    sx: {
-                      "& input": {
-                        height: "3.5vh !important",
-                        fontWeight: "800 !important",
-
-                      },
-                    },
                   }}
-                />;
+                />
 
               </Box>
-              <ErrorOutlineIcon sx={{ marginTop: '40px' }} />
+              <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
             </FormGrid>
           </Grid>
         </Grid>

@@ -43,7 +43,7 @@ export const ButtonText = styled(Button)(({ theme }) => ({
 export const FormGrid = styled(Box)(({ theme }) => ({
     display:'grid',
     width:'100%',
-    gridTemplateColumns:'85% 13%',
+    gridTemplateColumns:'90% 10%',
     gridGap:'1%'
 }))
 export const RootContainer=styled(Box)(({theme})=>({

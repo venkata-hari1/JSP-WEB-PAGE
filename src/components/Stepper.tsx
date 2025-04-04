@@ -5,11 +5,10 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import FormOne from './FormOne';
 import FormTwo from './FormTwo';
-
+import { useStyles } from './MakeStyles/Style';
+import { React_Type } from '@/utils/Types';
 const steps = [
   {
     content: <FormOne />,
@@ -21,7 +20,7 @@ const steps = [
 
 export default function VerticalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
-
+  const {classes}:React_Type=useStyles()
   const handleNext = (step:number) => {
     if(step===0){
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -42,16 +41,13 @@ export default function VerticalLinearStepper() {
   return (
     <Box sx={{ width: '100%', mx: 'auto'}}>
       <Stepper activeStep={activeStep} orientation="vertical" connector={null}
-        sx={{
-          '& .MuiStepContent-root': { paddingLeft: 0, borderLeft: 'none' }
-        }}
-      
+        classes={{root:classes.stepper}}  
       >
         {steps.map((step, index) => (
           <Step key={index}>
             <StepContent>
               {step.content}
-              <Box sx={{ mt: 2 }}>
+              <Box className={classes.btncontainer}>
             
                {index === 1&& <Button
                 
@@ -62,8 +58,8 @@ export default function VerticalLinearStepper() {
                   Back
                 </Button>}
                 <Button
-            
-                  variant="contained"
+                  className={classes.nextbtn}
+                  variant="outlined"
                   onClick={()=>handleNext(index)}
                   sx={{ mt: 1, mr: 1 }}
                 >

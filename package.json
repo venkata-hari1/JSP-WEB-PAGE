@@ -25,7 +25,8 @@
     "react-i18next": "^15.4.1",
     "react-redux": "^9.2.0",
     "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tss-react": "^4.9.16"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
