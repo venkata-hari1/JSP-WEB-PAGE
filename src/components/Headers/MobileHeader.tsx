@@ -10,7 +10,7 @@ export default function MobileHeader() {
             width={0}
             height={0}
             sizes="100vw"
-            style={{ width: '90%',marginLeft:'4%', height: '100%',backgroundPosition:'center' }}
+            style={{ width: '100%', height: '100%',backgroundPosition:'center',objectFit:'cover' }}
             alt='pawan kalay'/>
      </MobileHeaderStyle>
    

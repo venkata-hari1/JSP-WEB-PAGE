@@ -8,7 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import { useTranslation } from 'react-i18next';
 import { useStyles } from './MakeStyles/Style';
-import { FormGrid, FormLabelText, RadioButtonText, SmallText } from './ReusableStyles/Styles';
+import { FormGrid, FormLabelText, RadioButtonText, RootContainer, SmallText } from './ReusableStyles/Styles';
 import Select from './Select';
 import { setValue } from './Redux/Reducers/Language';
 import { useDispatch } from 'react-redux';
@@ -21,8 +21,8 @@ export default function FormTwo() {
     dispatch(setValue(true))
   }
   return (
-    <Fragment>
-    <Grid container sx={{ width: '93%' }} mt={12}>
+    <RootContainer>
+    <Grid container sx={{ width: '93%' }} mt={16}>
       <Typography variant='h6' sx={{ display: "flex", justifyContent: "flexStart", color: "#FF0000", textDecoration: "underline" }}>{t('maintitle')}</Typography>
       <Grid size={{ xs: 12, md: 12, lg: 12 }} >
         <Box display="flex" flexDirection="row">
@@ -108,10 +108,11 @@ export default function FormTwo() {
         <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
         </FormGrid>
         <Select/>
+     
       </Grid>
   
     </Grid>
 
-    </Fragment>
+    </RootContainer>
   )
 }
