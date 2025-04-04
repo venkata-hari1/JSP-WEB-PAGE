@@ -42,7 +42,7 @@ function FormOne() {
     <Fragment>
       <Slider />
       <RootContainer>
-        <Grid container sx={{ width: '96%' }}>
+        <Grid container sx={{ width: '93%' }}>
           <Grid>
             {(
               t('sections', { returnObjects: true }) as Array<{
@@ -60,10 +60,12 @@ function FormOne() {
                       {section.description
                         .slice(0, expanded === index ? section.description.length : 3)
                         .map((des, idx) => (
-                          <Box key={idx} sx={{ mt: 2 }}>
-                            <StrongSmallText>{des.subheading}</StrongSmallText>
-                            <SmallText>{des.content}</SmallText>
-                          </Box>
+                          <Typography component='p' key={idx}>
+                            < StrongSmallText as='span'>{des.subheading}</ StrongSmallText>
+                            <SmallText as='span'>{des.content}</SmallText>.
+                          </Typography>
+
+
                         ))}
 
                       {section.description.length > 3 && (
@@ -133,13 +135,13 @@ function FormOne() {
                         <InputAdornment position='start'>
                           <PermIdentityIcon sx={{ fontSize: '20px' }} />
                         </InputAdornment>,
-                          sx: {
-                            "& input": {
-                              height: "3.5vh !important",
-                              fontWeight: "800 !important",
-      
-                            },
-                          },
+                      sx: {
+                        "& input": {
+                          height: "3.5vh !important",
+                          fontWeight: "800 !important",
+
+                        },
+                      },
 
                     }
                   }}

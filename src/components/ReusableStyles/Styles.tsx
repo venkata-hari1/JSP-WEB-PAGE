@@ -1,4 +1,4 @@
-import { Box, Button, styled } from "@mui/material"
+import { Box, Button, styled, Typography } from "@mui/material"
 
 export const flex = {
     display: 'flex',
@@ -6,7 +6,7 @@ export const flex = {
     alignItems: 'center',
     alignContent: 'center',
 }
-export const SmallText = styled(Box)(({ theme }) => ({
+export const SmallText = styled(Typography)(({ theme }) => ({
     fontSize: '14px',
     color: '#333333',
     fontWeight: '500',

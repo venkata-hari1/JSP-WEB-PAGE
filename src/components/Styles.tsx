@@ -35,6 +35,7 @@ export const Typography_Div=styled(Box)(({theme})=>({
     position: "relative",
     display:'none',
     marginTop:'20%',
+    width:'100%',
     [theme.breakpoints.down('md')]:{
        height:'50vh',
         display:'block',
