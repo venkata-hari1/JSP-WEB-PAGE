@@ -9,6 +9,8 @@ import { React_Type } from '@/utils/Types';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+
+
 function FormOne() {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState<null | number>(null);
@@ -22,7 +24,8 @@ function FormOne() {
         i18n.changeLanguage(storedLanguage);
       }
     }
-  }, []);
+     
+   }, []);
 
   const toggleEvent = (id: number) => {
     setExpanded((prev) => (prev === id ? null : id));
