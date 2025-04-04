@@ -124,7 +124,7 @@ function FormOne() {
                 <FormLabelText>{t('name')} <Typography component="span" color='red'>*</Typography></FormLabelText>
                 <TextField placeholder={t('placeholder')}
                   fullWidth
-                  size='small'
+           
                   classes={{root:classes.textfield}}
                   InputProps={{
                     classes: {
@@ -143,7 +143,6 @@ function FormOne() {
                 <FormLabelText>{t('phone')}<Typography component="span" color='red'>*</Typography></FormLabelText>
                 <TextField
                   type="number"
-                  size="small"
                   classes={{root:classes.textfield}}
                   fullWidth
                   InputProps={{

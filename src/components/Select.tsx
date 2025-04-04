@@ -9,10 +9,11 @@ import {
   SelectChangeEvent,
   TextField,
   InputAdornment,
+  Typography,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useStyles } from './MakeStyles/Style';
-import { FormGrid } from './ReusableStyles/Styles';
+import { FormGrid, FormLabelText } from './ReusableStyles/Styles';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 type VillageType = {
   name: string;
@@ -194,10 +195,12 @@ export default function LocationSelector() {
 
       {/* Pincode */}
       <FormGrid>
+      <Box>
+      <FormLabelText>{t('Pincode')} <Typography component="span" color='red'>*</Typography></FormLabelText>
       <TextField
         fullWidth
-        size="small"
-        label={t('Pincode')}
+   
+        placeholder={t('Pincode')}
         value={pincode}
         InputProps={{
           readOnly: true,
@@ -205,7 +208,8 @@ export default function LocationSelector() {
         }}
         classes={{ root: classes.textfield }}
       />
-       <ErrorOutlineIcon sx={{ marginTop: '12px',color:'#889095' }} />
+      </Box>
+       <ErrorOutlineIcon sx={{ marginTop: '38px',color:'#889095' }} />
        </FormGrid>
     </Box>
   );

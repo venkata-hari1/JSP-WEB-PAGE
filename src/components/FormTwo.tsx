@@ -83,7 +83,7 @@ export default function FormTwo() {
           <FormLabelText>{t('HNO')} <Typography component="span" color='red'>*</Typography></FormLabelText>
           <TextField placeholder={t('hplaceholder')}
             fullWidth
-            size='small'
+  
             classes={{ root: classes.textfield }}
             InputProps={{
               classes: {
@@ -100,6 +100,7 @@ export default function FormTwo() {
         <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
         </FormGrid>
         <Select/>
+        
       </Grid>
     </Grid>
   )
