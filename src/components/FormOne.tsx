@@ -138,7 +138,7 @@ function FormOne() {
                       sx: {
                         "& input": {
                           height: "3.5vh !important",
-                          fontWeight: "800 !important",
+                        
 
                         },
                       },
