@@ -15,7 +15,7 @@ export default function FormTwo() {
   const { t, i18n } = useTranslation();
   const { classes }: any = useStyles();
   return (
-    <Grid container spacing={2} direction="column">
+    <Grid container spacing={2} direction="column" sx={{marginTop:{xs:'40px',md:'40px'}}}>
       <Typography variant='h6' sx={{ display: "flex", justifyContent: "flexStart", color: "#FF0000", textDecoration: "underline" }}>{t('maintitle')}</Typography>
       <Grid size={{ xs: 12, md: 12, lg: 12 }} >
         <Box display="flex" flexDirection="row">
