@@ -48,7 +48,7 @@ const handleNext=()=>{
     <Fragment>
       <Slider />
       <RootContainer>
-        <Grid container sx={{ width: '93%' }}>
+        <Grid container sx={{ width: '93%' }} mb={2}>
           <Grid>
             {(
               t('sections', { returnObjects: true }) as Array<{

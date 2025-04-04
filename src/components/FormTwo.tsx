@@ -22,8 +22,8 @@ export default function FormTwo() {
   }
   return (
     <RootContainer>
-      <Grid container sx={{ width: '93%' }} mt={6}>
-        <Typography variant='h6' sx={{ display: "flex", justifyContent: "flexStart", color: "#FF0000", textDecoration: "underline" }}>{t('maintitle')}</Typography>
+      <Grid container sx={{ width: '93%' }} mt={10} mb={2}>
+        <Typography variant='h6' sx={{ display: "flex", textAlign:'center', color: "#FF0000", textDecoration: "underline" }}>{t('maintitle')}</Typography>
         <Grid size={{ xs: 12, md: 12, lg: 12 }} >
           <Box display="flex" flexDirection="row">
             <FormControl>
