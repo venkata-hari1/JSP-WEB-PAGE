@@ -266,7 +266,7 @@ const Childtwo = () => {
   </Stack>
   <Stack direction="row" alignItems="center">
   <Checkbox/> <ElderlyIcon />
-  <Typography component="div" ml={3}>Pension<SmallText variant='span'>( For Widows And Old Age )</SmallText></Typography>
+  <Typography component="div" ml={3}>Pension<Typography component='span'>( For Widows And Old Age )</Typography></Typography>
   </Stack>
   <Stack direction="row" alignItems="center">
   <Checkbox  /> <AssistWalkerIcon/>
@@ -303,10 +303,10 @@ const Childtwo = () => {
   </Box>      
 
   <Box mt={5} >
-  <Typography>Additional Suggestions / Comments
+  <Box >Additional Suggestions / Comments
     <SmallText>(Please mention the issues you are facing with the government and what you expect from the JanaSena government)
     </SmallText>
-  </Typography>
+  </Box>
   
 
   <TextField
