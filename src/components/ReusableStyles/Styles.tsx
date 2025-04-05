@@ -69,6 +69,6 @@ export const RadioBoxGrid=styled(Box)(({theme})=>({
 export const RadioBoxGrid1=styled(Box)(({theme})=>({
     display:'grid',
     width:'100%',
-    gridTemplateColumns:'38% 58%',
+    gridTemplateColumns:'35% 64%',
     gridGap:'1%'
 }))
