@@ -115,7 +115,7 @@ export const Telugu = {
     },
     adultsmembers: {
       adultslabel: "18 సంవత్సరాలు పైబడిన పెద్దవారు ఎంత మంది?",
-      genders: [{ gendername: "మగవారు" }, { gendername: "ఆడవారు" }],
+      genders: [{ key: "male",gendername: "మగవారు" }, { key: "female",gendername: "ఆడవారు" }],
     },
     futurevoters: {
       futurelabel: "భవిష్యత్ ఓటర్లు (7-17 సంవత్సరాలు)?",

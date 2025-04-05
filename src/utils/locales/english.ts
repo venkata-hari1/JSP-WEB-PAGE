@@ -115,8 +115,8 @@ export const English = {
     },
     adultsmembers:{
       adultslabel:"How Many Adults Above(18+ Years)",
-      genders:[{gendername:"Male"},
-               {gendername:"Female"}]
+      genders:[{ key: "male", gendername:"Male"},
+               { key: "female",gendername:"Female"}]
      },
      futurevoters:{
       futurelabel:"How Many future Voters (7-17 Years)",

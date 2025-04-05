@@ -2,18 +2,19 @@ import { Grid, Box, Typography, TextField, FormControl, RadioGroup, FormControlL
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import PersonIcon from '@mui/icons-material/Person';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MiddleText, RadioBoxGrid, RadioBoxGrid1, RadioButtonText, SmallText } from './ReusableStyles/Styles';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from './Redux/Store/store';
-import { setFormData } from './Redux/Reducers/Language';
+import { decrementAdult, incrementAdult, setFormData } from './Redux/Reducers/Language';
 import ListFields from './ListFields';
 import { useStyles } from './MakeStyles/Style';
 import { React_Type } from '@/utils/Types';
 
 const Childtwo = () => {
   const { t, i18n } = useTranslation();
+  const [adult, setAdult] = React.useState<number>(0)
   const { classes }: React_Type = useStyles();
   const dispatch = useDispatch<AppDispatch>()
   const formState = useSelector((state: RootState) => state.Language.form)
@@ -29,16 +30,20 @@ const Childtwo = () => {
       education: e.target.value
     }));
   };
-  // const icons = [
-  //   <SchoolIcon />,
-  //   <ElderlyIcon />,
-  //   <AssistWalkerIcon />,
-  //   <MedicalServicesIcon />,
-  //   <GrassIcon />,
-  //   <RiceBowlIcon />,
-  //   <HomeIcon />,
-  // ];
 
+
+  const genderKeyMap: Record<string, 'male' | 'female'> = {
+    Male: 'male',
+    Female: 'female',
+  };
+
+  const handleIncrement = (key: 'male' | 'female') => {
+    dispatch(incrementAdult(key));
+  };
+
+  const handleDecrement = (key: 'male' | 'female') => {
+    dispatch(decrementAdult(key));
+  };
   return (
     <Grid container direction="column" mt={2} sx={{ width: '100%' }}>
       <FormControl fullWidth>
@@ -104,9 +109,9 @@ const Childtwo = () => {
         <SmallText>{t('adultsmembers.adultslabel')}<Typography component='span' color='red'>*</Typography></SmallText>
 
 
-        <Stack direction="row" spacing={2}>
+        <Stack direction="row" spacing={2} mt={1}>
 
-          {(t('adultsmembers.genders', { returnObjects: true }) as Array<{ gendername: string }>).map((option, index) =>
+          {(t('adultsmembers.genders', { returnObjects: true }) as Array<{ key: 'male' | 'female', gendername: string }>).map((option, index) => (
             <Box
               key={index}
               sx={{
@@ -133,17 +138,21 @@ const Childtwo = () => {
                   pl: 1,
                 }}
               >
-                <Typography variant="body2">1</Typography>
+                <Typography variant="body2">{formState.adults[option.key]}</Typography>
                 <Stack spacing={-1}>
-                  <IconButton size="small" sx={{ p: 0.25 }}>
+                  <IconButton size="small" sx={{ p: 0.25 }} onClick={() => handleIncrement(option.key)}>
                     <ArrowDropUpRoundedIcon fontSize="small" />
                   </IconButton>
-                  <IconButton size="small" sx={{ p: 0.25 }}>
+                  <IconButton size="small" sx={{ p: 0.25 }} onClick={() => handleDecrement(option.key)}>
                     <ArrowDropDownRoundedIcon fontSize="small" />
                   </IconButton>
                 </Stack>
               </Box>
-            </Box>)}
+            </Box>
+          ))}
+
+
+
 
         </Stack>
       </Box>
@@ -214,7 +223,7 @@ const Childtwo = () => {
           placeholder={t('suggestions.placedtext')}
           fullWidth
           sx={{
-            mt:2,
+            mt: 2,
             "& .MuiInputBase-root": {
               fontSize: "14px",
             },

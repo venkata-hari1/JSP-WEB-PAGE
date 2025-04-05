@@ -136,10 +136,10 @@ export const Hindi = {
     adultsmembers: {
       adultslabel: "18 वर्ष से अधिक आयु के कितने वयस्क हैं?",
       genders: [
-        {
+        {key: "male",
           gendername: "पुरुष",
         },
-        {
+        {key: "female",
           gendername: "महिलाएं",
         },
       ],
