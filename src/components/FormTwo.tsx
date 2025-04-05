@@ -1,88 +1,109 @@
 'use client'
-import React, { useEffect } from 'react'
-import { Grid,Box, Icon, IconButton, Typography, TextField, OutlinedInput, InputLabel, } from '@mui/material'
+import React from 'react'
+import { Grid, Box, Typography, TextField, InputAdornment } from '@mui/material'
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+import { useTranslation } from 'react-i18next';
+import { useStyles } from './MakeStyles/Style';
+import { FormGrid, FormLabelText, RadioButtonText, SmallText } from './ReusableStyles/Styles';
+import Select from './Select';
+import Childtwo from './Childtwo';
 export default function FormTwo() {
-
-
-
+  const { t, i18n } = useTranslation();
+  const { classes }: any = useStyles();
   return (
-    <Grid container spacing={2} direction="column">
-     <Typography variant='h6' sx={{display:"flex",justifyContent:"flexStart",color:"#FF0000",textDecoration:"underline"}}>GAME CHANGER OF TELANGANA</Typography>  
-    <Grid item >
-    <Box direction="row"> 
-    <FormControl>
-      <FormLabel sx={{color:"#333333",fontSize:14}}>Do You Have Voter ID In Telangana?</FormLabel>
-      <RadioGroup  row
-        
-        name="radio-buttons-group">
-        <FormControlLabel value="yes" control={<Radio size="small"
-        
-        sx={{ color:"#C9C6C6",
-              '&.Mui-checked': {
-                color:"#FF0000",
-              }}}
-        
-        />} label="Yes" />
-       
-        <FormControlLabel value="no" control={<Radio  size="small" 
-          sx={{ color:"#C9C6C6",
-            '&.Mui-checked': {
-              color:"#FF0000",
-            },fontSize:14 }}
+    <Grid container spacing={2} direction="column" sx={{marginTop:{xs:'40px',md:'40px'}}}>
+      <Typography variant='h6' sx={{ display: "flex", justifyContent: "flexStart", color: "#FF0000", textDecoration: "underline" }}>{t('maintitle')}</Typography>
+      <Grid size={{ xs: 12, md: 12, lg: 12 }} >
+        <Box display="flex" flexDirection="row">
+          <FormControl>
+            <SmallText>{t('voter.voterlabel')}</SmallText>
+            <RadioGroup row
 
-        
-        />} label="No" />
-        </RadioGroup>
-    </FormControl>
-    </Box>
-    
+              name="radio-buttons-group">
+              {(t('voter.status', { returnObjects: true }) as Array<{ value: string }>)?.map((option, index) => (
+                <FormControlLabel
+                  key={index}
+                  value={option.value}
+                  control={
+                    <Radio
+                      size="small"
+                      sx={{
+                        color: "#C9C6C6",
+                        '&.Mui-checked': {
+                          color: "#FF0000",
+                        },
+                      }}
+                    />
+                  }
+                  label={<RadioButtonText>{option.value}</RadioButtonText>}
+                />
+              ))}
+            </RadioGroup>
+          </FormControl>
+        </Box>
+      </Grid>
+      <Grid size={{ xs: 12, md: 12, lg: 12 }} >
+        <Box sx={{ display: "flex", flexDirection: "row" }}>
+          <FormControl>
+            <SmallText>{t('janasenamember.memberlabel')}</SmallText>
+            <RadioGroup row
 
-    </Grid>
-    
-    <Grid item >
-    <Box direction="row"> 
-    <FormControl>
-      <FormLabel sx={{color:"#333333", fontSize:14}}>Are You a Member Of Janasena?</FormLabel>
-      <RadioGroup  row
-        
-        name="radio-buttons-group">
-        <FormControlLabel value="yes" control={<Radio size="small"
-        
-        sx={{ color:"#C9C6C6",
-              '&.Mui-checked': {
-                color:"#FF0000",
+              name="radio-buttons-group">
+              {(t('janasenamember.option', { returnObjects: true }) as Array<{ value: string }>)?.map((option, index) => (
+                <FormControlLabel
+                  key={index}
+                  value={option.value}
+                  control={
+                    <Radio
+                      size="small"
+                      sx={{
+                        color: "#C9C6C6",
+                        '&.Mui-checked': {
+                          color: "#FF0000",
+                        },
+                        fontSize: 14,
+                      }}
+                    />
+                  }
+                  label={<RadioButtonText>{option.value}</RadioButtonText>}
+                />
+              ))}
 
-              },fontSize:14}}
+            </RadioGroup>
+          </FormControl>
+        </Box>
+      </Grid>
+
+      <Grid size={{ xs: 12, md: 12, lg: 12 }}>
+        <FormGrid>
+        <Box>
+          <FormLabelText>{t('HNO')} <Typography component="span" color='red'>*</Typography></FormLabelText>
+          <TextField placeholder={t('hplaceholder')}
+            fullWidth
+  
+            classes={{ root: classes.textfield }}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.outlineBorder,
+              },
+              startAdornment: (
+                <InputAdornment position='start'>
+                  {/* <PermIdentityIcon sx={{ fontSize: '20px',color:'red' }} /> */}
+                </InputAdornment>
+              )
+            }}
+          />
+        </Box>
+        <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
+        </FormGrid>
+        <Select/>
         
-        />} label="Yes" />
-        <FormControlLabel value="no" control={<Radio  size="small" 
-          sx={{ color:"#C9C6C6",
-            '&.Mui-checked': {
-              color:"#FF0000",
-            } }}
-
-        
-        />} label="No" />
-        </RadioGroup>
-    </FormControl>
-    </Box>
-    </Grid>
-
-    <Grid item >
-    <Box > 
-    <FormLabel>House/No<Typography component="span" color='red'></Typography></FormLabel> 
-    <TextField fullWidth size="small" sx={{width:"90%"}} />
-    </Box>    
-    </Grid>
-
-   
+      </Grid>
+      <Childtwo />
     </Grid>
   )
 }

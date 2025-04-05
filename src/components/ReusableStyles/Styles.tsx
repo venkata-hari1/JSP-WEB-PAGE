@@ -43,7 +43,7 @@ export const ButtonText = styled(Button)(({ theme }) => ({
 export const FormGrid = styled(Box)(({ theme }) => ({
     display:'grid',
     width:'100%',
-    gridTemplateColumns:'85% 13%',
+    gridTemplateColumns:'90% 10%',
     gridGap:'1%'
 }))
 export const RootContainer=styled(Box)(({theme})=>({
@@ -51,5 +51,13 @@ export const RootContainer=styled(Box)(({theme})=>({
 width:'100%',
 flexDirection:'column'
 }))
-
+export const FormLabelText=styled(Box)(({theme})=>({
+    fontSize:'14px',
+    lineHeight:'25px',
+    color:'#323639'
+}))
+export const RadioButtonText=styled(Box)(({theme})=>({
+    fontSize:'16px',
+    color:'#333333'
+}))
 

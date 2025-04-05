@@ -1,6 +1,16 @@
+import { englishdistrictData  } from "./Districts/englishdistrictData";
+
 export const English = {
   translation: {
     maintitle: "GAME CHANGER OF TELANGANA",
+    districtData:englishdistrictData ,
+    HNO:'House/No',
+    SelectDistrict: "Select District*",
+    SelectConstituency: "Select Constituency*",
+    SelectDivision: "Select Division*",
+    SelectVillageArea: "Select Village/Area*",
+    Pincode: "Pincode",
+    hplaceholder: "Enter house number",
     sections: [
       {
         heading: "Janasena’s Vision",
@@ -62,9 +72,10 @@ export const English = {
     },
     name: "Name",
     phone: "Phone Number",
+    placeholder:'Enter Your Name',
     voter: {
       voterlabel: "Do You have Voter ID in Telangana",
-      status: [{ value: "YES" }, { value: "No" }],
+      status: [{ value: "Yes" }, { value: "No" }],
     },
     
     janasenamember:{
