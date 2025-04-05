@@ -11,23 +11,30 @@ import { useStyles } from './MakeStyles/Style';
 import { React_Type } from '@/utils/Types';
 const steps = [
   {
-    content: <FormOne/>,
+    content: <FormTwo />,
   },
   {
-    content: <FormTwo/>,
+    content: <FormOne />,
   },
 ];
 
 export default function VerticalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const {classes}:React_Type=useStyles()
+  React.useEffect(() => {
+    const scrollToStepper = () => {
+      const el = document.getElementById('stepper-box');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+  
+    if (activeStep === 1) {
+      setTimeout(scrollToStepper, 2); 
+    }
+  }, [activeStep]);
   const handleNext = (step:number) => {
-    if(step===0){
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    }
-    else{
-      setActiveStep(0)
-    }
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {

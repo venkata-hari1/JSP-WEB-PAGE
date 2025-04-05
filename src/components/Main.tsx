@@ -5,7 +5,7 @@ import DeskTopSlider from './Slider/DeskTopSlider'
 export default function Main() {
   return (
 
-    <Grid container spacing={2}>
+    <Grid container spacing={2} id="stepper-box">
       <Grid size={{ lg:6}}  sx={{display:{xs:'none',md:'none',lg:'block'}}}>
       <DeskTopSlider/>
       </Grid>

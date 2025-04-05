@@ -60,4 +60,9 @@ export const RadioButtonText=styled(Box)(({theme})=>({
     fontSize:'16px',
     color:'#333333'
 }))
-
+export const RadioBoxGrid=styled(Box)(({theme})=>({
+    display:'grid',
+    width:'100%',
+    gridTemplateColumns:'48% 48%',
+    gridGap:'1%'
+}))

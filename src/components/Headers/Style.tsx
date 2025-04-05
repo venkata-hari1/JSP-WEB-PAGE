@@ -25,8 +25,7 @@ export const MobileHeaderStyle=styled(Box)(({theme})=>({
 ...flex,
  position:'fixed',
  zIndex:900,
- background:'white',
- height:'10vh',
+background:'white',
  display:'none',
  width:'100%',
  [theme.breakpoints.down('md')]:{

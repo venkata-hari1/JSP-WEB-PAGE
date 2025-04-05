@@ -2,7 +2,7 @@
 
 import React, { Fragment, useEffect, useState } from 'react';
 import Slider from './Slider/MobileSlider';
-import { Box, Button, Card, FormControl, FormControlLabel, FormLabel, Grid, InputAdornment,Radio, RadioGroup, TextField, Typography } from '@mui/material';
+import { Box, FormControl, FormControlLabel, FormLabel, Grid, InputAdornment,Radio, RadioGroup, TextField, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { BigText, ButtonText, FormGrid, FormLabelText, MiddleText, RadioButtonText, RootContainer, SmallText, StrongSmallText } from './ReusableStyles/Styles';
 import { React_Type } from '@/utils/Types';
@@ -165,6 +165,7 @@ function FormOne() {
           </Grid>
         </Grid>
       </RootContainer>
+      
     </Fragment>
   );
 }
