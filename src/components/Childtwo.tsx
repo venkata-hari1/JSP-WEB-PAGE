@@ -5,7 +5,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import { FormGrid, FormLabelText, RadioBoxGrid, RadioButtonText, SmallText } from './ReusableStyles/Styles';
+import { FormGrid, FormLabelText, RadioBoxGrid, RadioBoxGrid1, RadioButtonText, SmallText } from './ReusableStyles/Styles';
 import Button from '@mui/material/Button';
 import PersonIcon from '@mui/icons-material/Person';
 import { useTranslation } from 'react-i18next';
@@ -43,7 +43,7 @@ const Childtwo = () => {
           defaultValue="female"
           name="radio-buttons-group"
         >
-           <RadioBoxGrid>
+           <RadioBoxGrid1>
             {(t('education.educationstatus', { returnObjects: true }) as Array<{ class: string }>).map((option, index) => (
               <FormControlLabel key={index} value={option.class} control={<Radio size='small' sx={{
                 color: "#C9C6C6",
@@ -52,7 +52,7 @@ const Childtwo = () => {
                   fontSize: "14px"
                 },
               }} />} label={<RadioButtonText>{option.class}</RadioButtonText>} />))}
-          </RadioBoxGrid>
+          </RadioBoxGrid1>
         </RadioGroup>
       </FormControl>
       <Stack display="flex" flexDirection="row" sx={{ mt: 2 }}>

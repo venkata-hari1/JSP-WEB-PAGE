@@ -57,12 +57,18 @@ export const FormLabelText=styled(Box)(({theme})=>({
     color:'#323639'
 }))
 export const RadioButtonText=styled(Box)(({theme})=>({
-    fontSize:'16px',
+    fontSize:'14.5px',
     color:'#333333'
 }))
 export const RadioBoxGrid=styled(Box)(({theme})=>({
     display:'grid',
     width:'100%',
     gridTemplateColumns:'48% 48%',
+    gridGap:'1%'
+}))
+export const RadioBoxGrid1=styled(Box)(({theme})=>({
+    display:'grid',
+    width:'100%',
+    gridTemplateColumns:'38% 58%',
     gridGap:'1%'
 }))
