@@ -15,10 +15,10 @@ import { setOpen, setScroll } from './Redux/Reducers/Language';
 import ScrollDialog from './ConformationPopUp/ScrollDailog';
 const steps = [
   {
-    content: <FormOne />,
+    content: <FormTwo />,
   },
   {
-    content: <FormTwo />,
+    content: <FormOne/>,
   },
 ];
 

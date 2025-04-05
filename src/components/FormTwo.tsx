@@ -127,7 +127,7 @@ export default function FormTwo() {
             }}
           />
         </Box>
-        <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
+        
         </FormGrid>
         <Select/>
      
