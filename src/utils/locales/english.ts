@@ -148,7 +148,7 @@ export const English = {
      heading:"Additional Suggestions / Comments",
      description:
  "(Please mention the issues you are facing with the government and what you expect from the JanaSena government)",
- "placedtext":"Share your concerns regarding government policies, challenges you are facing, and your expectations from the JanaSena government..."
+ placedtext:"Share your concerns regarding government policies, challenges you are facing, and your expectations from the JanaSena government..."
   }
  },
 };

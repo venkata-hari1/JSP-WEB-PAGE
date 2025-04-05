@@ -203,15 +203,15 @@ const Childtwo = () => {
         <ListFields />
       </Box>
       <Box mt={2} >
-        <MiddleText sx={{ mb: 1 }}>Additional Suggestions / Comments</MiddleText>
-        <SmallText>(Please mention the issues you are facing with the government and what you expect from the JanaSena government)
+        <MiddleText sx={{ mb: 1 }}>{t('suggestions.heading')}</MiddleText>
+        <SmallText>{t('suggestions.description')}
         </SmallText>
         <TextField
           label="Your Message"
           multiline
           rows={4}
           variant="outlined"
-          placeholder="Share your concerns regarding government policies, challenges you are facing, and your expectations from the JanaSena government..."
+          placeholder={t('suggestions.placedtext')}
           fullWidth
           sx={{
             mt:2,
