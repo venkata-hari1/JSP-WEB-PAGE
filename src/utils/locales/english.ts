@@ -11,6 +11,7 @@ export const English = {
     SelectVillageArea: "Select Village/Area*",
     Pincode: "Pincode",
     hplaceholder: "Enter house number",
+    invalidMobile: "Please enter a valid 10-digit mobile number",
     sections: [
       {
         heading: "Janasena’s Vision",
@@ -91,7 +92,7 @@ export const English = {
     village:"Select Village/ Area",
     pincode:"Pincode",
     employment:{
-      employmentlabel:"Employeement Status",
+      employmentlabel:"Employement Status",
       employmentstatus:[
         {sector:"Private Sector"},
         {sector:"Public Sector"},

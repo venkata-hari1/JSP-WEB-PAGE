@@ -3,14 +3,15 @@ import { hindidistrictData } from "./Districts/hindidistrictData";
 export const Hindi = {
   translation: {
     maintitle: "तेलंगाना गेम चेंजर",
-    districtData:hindidistrictData ,
+    districtData: hindidistrictData,
     SelectDistrict: 'जिला चुनें*',
-SelectConstituency: 'विधानसभा क्षेत्र चुनें*',
-SelectDivision: 'डिवीजन चुनें*',
-SelectVillageArea: 'गांव/क्षेत्र चुनें*',
-HNO: 'मकान / नंबर',
-hplaceholder: "मकान संख्या दर्ज करें",
-Pincode: "पिनकोड",
+    SelectConstituency: 'विधानसभा क्षेत्र चुनें*',
+    SelectDivision: 'डिवीजन चुनें*',
+    SelectVillageArea: 'गांव/क्षेत्र चुनें*',
+    HNO: 'मकान / नंबर',
+    hplaceholder: "मकान संख्या दर्ज करें",
+    Pincode: "पिनकोड",
+    invalidMobile: "कृपया एक मान्य 10-अंकीय मोबाइल नंबर दर्ज करें",
     sections: [
       {
         heading: "जन सेना का विजन",
@@ -72,7 +73,7 @@ Pincode: "पिनकोड",
     },
     name: "नाम",
     phone: "फोन नंबर",
-    placeholder:"नाम दर्ज करें",
+    placeholder: "नाम दर्ज करें",
     voter: {
       voterlabel: "क्या आपके पास तेलंगाना में वोटर आईडी है?",
       status: [

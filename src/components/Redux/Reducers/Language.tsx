@@ -1,38 +1,71 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import English from "../../../utils/locales/english.json";
-import Hindi from "../../../utils/locales/hindi.json";
-import Telugu from "../../../utils/locales/telugu.json";
-import { React_Type } from "@/utils/Types";
-
-
-const languages: Record<string, any> = {
-  English,
-  Hindi,
-  Telugu,
-};
 type IState={
   value:boolean,
-  data:React_Type,
+  open:boolean,
+  scroll:string,
+  isMobileValid:boolean, 
+  form:{
+    name:string,
+    mobile:number | null,
+    voterid:string,
+    janasenamember:string,
+    houseno:string,
+    district:string,
+    constituency:string,
+    divison:string,
+    villagearea:string,
+    pincode:string,
+    employeementstatus:string,
+    education:string
+  }
 }
 const initialState:IState = {
   value: true,
-  data: English, 
+  open:false,
+  isMobileValid: false, 
+  scroll:'',
+  form:{
+    name:'',
+    mobile:null,
+    voterid:'',
+    janasenamember:'',
+    houseno:'',
+    district:'',
+    constituency:'',
+    divison:'',
+    villagearea:'',
+    pincode:'',
+    employeementstatus:'',
+    education:''
+  }
 };
 
 export const Language_Slice = createSlice({
   name: "LanguageSlice",
   initialState,
   reducers: {
-    setLanguage: (state, action: PayloadAction<string>) => {
-      state.data = languages[action.payload] || English;
-   
-    },
+ 
     setValue:(state,action)=>{
       state.value=action.payload
+    },
+    setFormData: (state, action) => {
+      state.form = {
+        ...state.form,
+        ...action.payload,
+      };
+    },
+    setOpen:(state,action)=>{
+      state.open=action.payload
+    },
+    setScroll:(state,action)=>{
+      state.scroll=action.payload
+    },
+    setIsMobileValid: (state, action: PayloadAction<boolean>) => {
+      state.isMobileValid = action.payload;
     }
    
   },
 });
 
-export const { setLanguage,setValue} = Language_Slice.actions;
+export const { setValue,setFormData,setOpen,setScroll, setIsMobileValid} = Language_Slice.actions;
 export default Language_Slice.reducer;

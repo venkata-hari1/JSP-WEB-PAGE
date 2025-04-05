@@ -9,16 +9,33 @@ import { FormGrid, FormLabelText, RadioBoxGrid, RadioBoxGrid1, RadioButtonText, 
 import Button from '@mui/material/Button';
 import PersonIcon from '@mui/icons-material/Person';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from './Redux/Store/store';
+import { setFormData } from './Redux/Reducers/Language';
 
 const Childtwo = () => {
   const { t, i18n } = useTranslation();
+  const dispatch=useDispatch<AppDispatch>()
+  const formState=useSelector((state:RootState)=>state.Language.form)
+   const handleRadioemploymentStatus = (e: React.ChangeEvent<HTMLInputElement>) => {
+      dispatch(setFormData({
+        ...formState,
+        employeementstatus: e.target.value
+      }));
+    };
+    const handleRadioeducation = (e: React.ChangeEvent<HTMLInputElement>) => {
+      dispatch(setFormData({
+        ...formState,
+        education: e.target.value
+      }));
+    };
   return (
     <Grid container direction="column" mt={2} sx={{width:'100%'}}>
       <FormControl fullWidth>
         <SmallText>{t('employment.employmentlabel')}<Typography component='span' color='red'>*</Typography></SmallText>
         <RadioGroup row
           aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue="female"
+          onChange={handleRadioemploymentStatus}
           name="radio-buttons-group"
         >
           <RadioBoxGrid>
@@ -40,7 +57,7 @@ const Childtwo = () => {
         <SmallText>{t('education.educationlabel')}<Typography component='span' color='red'>*</Typography></SmallText>
         <RadioGroup row
           aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue="female"
+          onChange={handleRadioeducation}
           name="radio-buttons-group"
         >
            <RadioBoxGrid1>

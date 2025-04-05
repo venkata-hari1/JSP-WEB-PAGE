@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   FormControl,
@@ -8,13 +8,16 @@ import {
   Select,
   SelectChangeEvent,
   TextField,
-  InputAdornment,
   Typography,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useStyles } from './MakeStyles/Style';
 import { FormGrid, FormLabelText } from './ReusableStyles/Styles';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { React_Type } from '@/utils/Types';
+import { setFormData } from './Redux/Reducers/Language';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from './Redux/Store/store';
 type VillageType = {
   name: string;
   pincode: string;
@@ -38,17 +41,16 @@ type DistrictDataType = {
 
 export default function LocationSelector() {
   const { t } = useTranslation();
-  const { classes }: any = useStyles();
-
-  const districtData:any = t('districtData', { returnObjects: true });
-
+  const { classes }:React_Type = useStyles();
+  const districtData:React_Type = t('districtData', { returnObjects: true });
   const [selectedDistrict, setSelectedDistrict] = useState('');
   const [selectedConstituency, setSelectedConstituency] = useState('');
   const [selectedDivision, setSelectedDivision] = useState('');
   const [villages, setVillages] = useState<VillageType[]>([]);
   const [selectedVillage, setSelectedVillage] = useState('');
   const [pincode, setPincode] = useState('');
-
+  const dispatch = useDispatch<AppDispatch>();
+  const formState = useSelector((state: RootState) => state.Language.form);
   const handleDistrictChange = (e: SelectChangeEvent<string>) => {
     const district = e.target.value;
     setSelectedDistrict(district);
@@ -85,6 +87,33 @@ export default function LocationSelector() {
     setPincode(village?.pincode || '');
   };
 
+  useEffect(() => {
+    const currentForm = {
+      district: selectedDistrict,
+      constituency: selectedConstituency,
+      division: selectedDivision,
+      village: selectedVillage,
+      pincode: pincode,
+    };
+  
+    // Compare before dispatching
+    const isEqual = Object.entries(currentForm).every(
+      ([key, value]) => formState[key as keyof typeof formState] === value
+    );
+  
+    if (!isEqual) {
+      dispatch(setFormData(currentForm));
+    }
+  }, [
+    selectedDistrict,
+    selectedConstituency,
+    selectedDivision,
+    selectedVillage,
+    pincode,
+    formState,
+    dispatch
+  ]);
+  
   return (
     <Box sx={{ display: 'grid', gap: 2,mt:2,mx: 'auto' }}>
       {/* District */}

@@ -3,14 +3,15 @@ import { telugudistrictData } from "./Districts/telugudistrictData";
 export const Telugu = {
   translation: {
     maintitle: "తెలంగాణ గేమ్ ఛేంజర్",
-    districtData:telugudistrictData ,
-SelectDistrict: 'జిల్లా ఎంచుకోండి*',
-SelectConstituency: 'నియోజకవర్గాన్ని ఎంచుకోండి*',
-SelectDivision: 'డివిజన్ ఎంచుకోండి*',
-SelectVillageArea: 'గ్రామం/ప్రాంతం ఎంచుకోండి*',
-HNO: 'ఇల్లు/నంబర్',
-hplaceholder: "ఇల్లు నంబర్ నమోదు చేయండి",
-Pincode: "పిన్‌కోడ్",
+    districtData: telugudistrictData,
+    SelectDistrict: 'జిల్లా ఎంచుకోండి*',
+    SelectConstituency: 'నియోజకవర్గాన్ని ఎంచుకోండి*',
+    SelectDivision: 'డివిజన్ ఎంచుకోండి*',
+    SelectVillageArea: 'గ్రామం/ప్రాంతం ఎంచుకోండి*',
+    HNO: 'ఇల్లు/నంబర్',
+    hplaceholder: "ఇల్లు నంబర్ నమోదు చేయండి",
+    invalidMobile: "దయచేసి సరైన 10 అంకెల మొబైల్ నంబర్‌ను నమోదు చేయండి",
+    Pincode: "పిన్‌కోడ్",
     sections: [
       {
         heading: "జనసేనా విజన్",
@@ -75,7 +76,7 @@ Pincode: "పిన్‌కోడ్",
 
     name: "పేరు",
     phone: "ఫోన్ నంబర్",
-    placeholder:"పేరు నమోదు చేయండి",
+    placeholder: "పేరు నమోదు చేయండి",
     voter: {
       voterlabel: "మీరు తెలంగాణలో ఓటర్ ఐడి కలిగి ఉన్నారా?",
       status: [{ value: "అవును" }, { value: "కాదు" }],
