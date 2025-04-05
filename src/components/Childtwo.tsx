@@ -11,91 +11,67 @@ import PersonIcon from '@mui/icons-material/Person';
 import { useTranslation } from 'react-i18next';
 
 const Childtwo = () => {
-    const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
-    <Grid container direction="column" spacing={2}>
- 
- <FormControl fullWidth>
-            <SmallText>{t('employment.employmentlabel')}<Typography component='span' color='red'>*</Typography></SmallText>
-            <RadioGroup row
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
-              name="radio-buttons-group"
-            >
-              <RadioBoxGrid>
-             {(t('employment.employmentstatus',{returnObjects:true}) as Array<{sector:string}>).map((option, index) => (
-                  <FormControlLabel key={index}  value={option.sector} control={<Radio size='small' sx={{
-                  color: "#C9C6C6",
-                  '&.Mui-checked': {
-                    color: "#FF0000",
-                    fontSize: "14px"
-                  },
-                }} />} label={<RadioButtonText>{option.sector}</RadioButtonText>} />))}
-              </RadioBoxGrid>
-            
-            </RadioGroup>
+    <Grid container direction="column" mt={2} sx={{width:'100%'}}>
+      <FormControl fullWidth>
+        <SmallText>{t('employment.employmentlabel')}<Typography component='span' color='red'>*</Typography></SmallText>
+        <RadioGroup row
+          aria-labelledby="demo-radio-buttons-group-label"
+          defaultValue="female"
+          name="radio-buttons-group"
+        >
+          <RadioBoxGrid>
+            {(t('employment.employmentstatus', { returnObjects: true }) as Array<{ sector: string }>).map((option, index) => (
+              <FormControlLabel key={index} value={option.sector} control={<Radio size='small' sx={{
+                color: "#C9C6C6",
+                '&.Mui-checked': {
+                  color: "#FF0000",
+                  fontSize: "14px"
+                },
+              }} />} label={<RadioButtonText>{option.sector}</RadioButtonText>} />))}
+          </RadioBoxGrid>
+
+        </RadioGroup>
 
 
-          </FormControl>
-          <FormControl>
-            <SmallText>Education<Typography component='span' color='red'>*</Typography></SmallText>
-            <RadioGroup row
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
-              name="radio-buttons-group"
-            >
-              <Box display="flex" flexDirection="column">
-                <FormControlLabel value="10th Class" control={<Radio size='small' sx={{
-                  color: "#C9C6C6",
-                  '&.Mui-checked': {
-                    color: "#FF0000",
-                    fontSize: "12px"
-                  },
-                }} />} label="10th Class" />
+      </FormControl>
+      <FormControl fullWidth sx={{ mt: 2 }}>
+        <SmallText>{t('education.educationlabel')}<Typography component='span' color='red'>*</Typography></SmallText>
+        <RadioGroup row
+          aria-labelledby="demo-radio-buttons-group-label"
+          defaultValue="female"
+          name="radio-buttons-group"
+        >
+           <RadioBoxGrid>
+            {(t('education.educationstatus', { returnObjects: true }) as Array<{ class: string }>).map((option, index) => (
+              <FormControlLabel key={index} value={option.class} control={<Radio size='small' sx={{
+                color: "#C9C6C6",
+                '&.Mui-checked': {
+                  color: "#FF0000",
+                  fontSize: "14px"
+                },
+              }} />} label={<RadioButtonText>{option.class}</RadioButtonText>} />))}
+          </RadioBoxGrid>
+        </RadioGroup>
+      </FormControl>
+      <Stack display="flex" flexDirection="row" sx={{ mt: 2 }}>
+        <SmallText>{t('familymembers.familymemberlabel')}<Typography component='span' color='red'>*</Typography>
+          <Box component="br" />
+          {t('familymembers.withyou')}
+        </SmallText>
 
-                <FormControlLabel value="Intermediate" control={<Radio size='small' sx={{
-                  color: "#C9C6C6",
-                  '&.Mui-checked': {
-                    color: "#FF0000",
-                    fontSize: "14px"
-                  },
-                }} />} label="Intermediate" />
-              </Box>
-              <Box display="flex" flexDirection="column">
-                <FormControlLabel value="Graduation" control={<Radio size='small' sx={{
-                  color: "#C9C6C6",
-                  '&.Mui-checked': {
-                    color: "#FF0000",
+        <ButtonGroup size="small" aria-label="Small button group" sx={{ marginLeft: "30px" }}>
+          <Stack direction="row" spacing={2}>
+            <Button variant="contained" sx={{ backgroundColor: "#BBB9B9" }}>-</Button>
+            <Box>1</Box>
+            <Button variant="contained" sx={{ backgroundColor: "#BBB9B9" }}>+</Button>
+          </Stack>
+        </ButtonGroup>
+      </Stack>
 
-                  },
-                }} />} label="Graduation" />
-                <FormControlLabel value="Postgraduation & Above" control={<Radio size='small' sx={{
-                  color: "#C9C6C6",
-                  '&.Mui-checked': {
-                    color: "#FF0000",
-                    fontSize: "14px"
-                  },
-                }} />} label="Postgraduation & Above" />
-              </Box>
-            </RadioGroup>
-          </FormControl>
-          <Stack display="flex" flexDirection="row" >
-          <SmallText>Total Members In The Family<Typography component='span' color='red'>*</Typography>
-            <Box component="br" />
-            Including you
-          </SmallText>
 
-          <ButtonGroup size="small" aria-label="Small button group" sx={{ marginLeft: "30px" }}>
-            <Stack direction="row" spacing={2}>
-              <Button variant="contained" sx={{ backgroundColor: "#BBB9B9" }}>-</Button>
-              <Box>1</Box>
-              <Button variant="contained" sx={{ backgroundColor: "#BBB9B9" }}>+</Button>
-            </Stack>
-          </ButtonGroup>
-        </Stack>
- 
 
-    
 
       <Box>
         <SmallText>How Many Adults Above (18+ Years)?<Typography component='span' color='red'>*</Typography></SmallText>
