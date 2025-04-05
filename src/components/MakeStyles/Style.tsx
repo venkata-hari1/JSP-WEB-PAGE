@@ -7,8 +7,15 @@ export const useStyles = makeStyles()((theme) => ({
   },
   textfield:{
     "& input": {
-    
       fontSize:'14px !important'
+    },
+  },
+  textfield1:{
+    "& input": {
+      fontSize:'14px !important'
+    },
+    "&::placeholder": {
+      fontSize: '10px !important',
     },
   },
   outlineBorder: {

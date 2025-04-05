@@ -1,30 +1,20 @@
-import { Grid, Box, FormLabel, Typography, ButtonGroup, Stack, IconButton, TextField, } from '@mui/material'
-import React from 'react'
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import { FormGrid, FormLabelText, RadioBoxGrid, RadioBoxGrid1, RadioButtonText, SmallText } from './ReusableStyles/Styles';
-import Button from '@mui/material/Button';
+import { Grid, Box, Typography, TextField, FormControl, RadioGroup, FormControlLabel, Stack, ButtonGroup, Button, IconButton, Radio, } from '@mui/material'
+import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
+import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import PersonIcon from '@mui/icons-material/Person';
+import React from 'react'
+import { MiddleText, RadioBoxGrid, RadioBoxGrid1, RadioButtonText, SmallText } from './ReusableStyles/Styles';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from './Redux/Store/store';
 import { setFormData } from './Redux/Reducers/Language';
-import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
-import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
-import Checkbox from '@mui/material/Checkbox';
-import SchoolIcon from '@mui/icons-material/School';
-import ElderlyIcon from '@mui/icons-material/Elderly';
-import AssistWalkerIcon from '@mui/icons-material/AssistWalker';
-import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
-import GrassIcon from '@mui/icons-material/Grass';
-import RiceBowlIcon from '@mui/icons-material/RiceBowl';
-import HomeIcon from '@mui/icons-material/Home';
+import ListFields from './ListFields';
+import { useStyles } from './MakeStyles/Style';
+import { React_Type } from '@/utils/Types';
 
 const Childtwo = () => {
   const { t, i18n } = useTranslation();
+  const { classes }: React_Type = useStyles();
   const dispatch = useDispatch<AppDispatch>()
   const formState = useSelector((state: RootState) => state.Language.form)
   const handleRadioemploymentStatus = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +29,16 @@ const Childtwo = () => {
       education: e.target.value
     }));
   };
+  // const icons = [
+  //   <SchoolIcon />,
+  //   <ElderlyIcon />,
+  //   <AssistWalkerIcon />,
+  //   <MedicalServicesIcon />,
+  //   <GrassIcon />,
+  //   <RiceBowlIcon />,
+  //   <HomeIcon />,
+  // ];
+
   return (
     <Grid container direction="column" mt={2} sx={{ width: '100%' }}>
       <FormControl fullWidth>
@@ -101,231 +101,111 @@ const Childtwo = () => {
 
 
       <Box mt={5}>
-        <SmallText>How Many Adults Above (18+ Years)?<Typography component='span' color='red'>*</Typography></SmallText>
-
-
-        <RadioBoxGrid sx={{mt:1}}>
-
-          <Box
-            sx={{
-              width:{lg:'150px',xs:'100%',md:'100%'},
-              border: '1px solid #C9C6C6',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              px: 1.5,
-              py: 0.5,
-              gap: 1,
-              bgcolor: 'white',
-            }}
-          >
-            <PersonIcon sx={{ color: 'red' }} />
-            <Typography variant="body2" fontWeight={500}>
-              Men
-            </Typography>
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 0.5,
-                borderLeft: '1px solid #C9C6C6',
-                pl: 1,
-              }}
-            >
-              <Typography variant="body2">1</Typography>
-              <Stack spacing={-1}>
-                <IconButton size="small" sx={{ p: 0.25 }}>
-                  <ArrowDropUpRoundedIcon fontSize="small" />
-                </IconButton>
-                <IconButton size="small" sx={{ p: 0.25 }}>
-                  <ArrowDropDownRoundedIcon fontSize="small" />
-                </IconButton>
-              </Stack>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              width:{lg:'150px',xs:'100%',md:'100%'},
-              border: '1px solid #C9C6C6',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              px: 1.5,
-              py: 0.5,
-              gap: 1,
-              bgcolor: 'white',
-            }}
-          >
-            <PersonIcon sx={{ color: 'red' }} />
-            <Typography variant="body2" fontWeight={500}>
-              Women
-            </Typography>
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 0.5,
-                borderLeft: '1px solid #C9C6C6',
-                pl: 1,
-              }}
-            >
-              <Typography variant="body2">1</Typography>
-              <Stack spacing={-1}>
-                <IconButton size="small" sx={{ p: 0.25 }}>
-                  <ArrowDropUpRoundedIcon fontSize="small" />
-                </IconButton>
-                <IconButton size="small" sx={{ p: 0.25 }}>
-                  <ArrowDropDownRoundedIcon fontSize="small" />
-                </IconButton>
-              </Stack>
-            </Box>
-          </Box>
-        </RadioBoxGrid>
-      </Box>
-
-
-      <Box mt={5}>
-        <SmallText>No of Voters In The Family*<Typography component='span' color='red'>*</Typography></SmallText>
+        <SmallText>{t('adultsmembers.adultslabel')}<Typography component='span' color='red'>*</Typography></SmallText>
 
 
         <Stack direction="row" spacing={2}>
 
-          <Box
-            sx={{
-              border: '1px solid #C9C6C6',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              px: 1.5,
-              py: 0.5,
-              gap: 1,
-              bgcolor: 'white',
-            }}
-          >
-
-            <Typography variant="body2" fontWeight={500}>
-              Boys
-            </Typography>
+          {(t('adultsmembers.genders', { returnObjects: true }) as Array<{ gendername: string }>).map((option, index) =>
             <Box
+              key={index}
               sx={{
+                border: '1px solid #C9C6C6',
+                borderRadius: '12px',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 0.5,
-                borderLeft: '1px solid #C9C6C6',
-                pl: 1,
+                px: 1.5,
+                py: 0.5,
+                gap: 1,
+                bgcolor: 'white',
               }}
             >
-              <Typography variant="body2">1</Typography>
-              <Stack spacing={-1}>
-                <IconButton size="small" sx={{ p: 0.25 }}>
-                  <ArrowDropUpRoundedIcon fontSize="small" />
-                </IconButton>
-                <IconButton size="small" sx={{ p: 0.25 }}>
-                  <ArrowDropDownRoundedIcon fontSize="small" />
-                </IconButton>
-              </Stack>
-            </Box>
-          </Box>
+              <PersonIcon sx={{ color: 'red' }} />
+              <Typography variant="body2" fontWeight={500}>
+                {option.gendername}
+              </Typography>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 0.5,
+                  borderLeft: '1px solid #C9C6C6',
+                  pl: 1,
+                }}
+              >
+                <Typography variant="body2">1</Typography>
+                <Stack spacing={-1}>
+                  <IconButton size="small" sx={{ p: 0.25 }}>
+                    <ArrowDropUpRoundedIcon fontSize="small" />
+                  </IconButton>
+                  <IconButton size="small" sx={{ p: 0.25 }}>
+                    <ArrowDropDownRoundedIcon fontSize="small" />
+                  </IconButton>
+                </Stack>
+              </Box>
+            </Box>)}
 
-
-          <Box
-            sx={{
-              border: '1px solid #C9C6C6',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              px: 1.5,
-              py: 0.5,
-              gap: 1,
-              bgcolor: 'white',
-            }}
-          >
-
-            <Typography variant="body2" fontWeight={500}>
-              Girls
-            </Typography>
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 0.5,
-                borderLeft: '1px solid #C9C6C6',
-                pl: 1,
-              }}
-            >
-              <Typography variant="body2">1</Typography>
-              <Stack spacing={-1}>
-                <IconButton size="small" sx={{ p: 0.25 }}>
-                  <ArrowDropUpRoundedIcon fontSize="small" />
-                </IconButton>
-                <IconButton size="small" sx={{ p: 0.25 }}>
-                  <ArrowDropDownRoundedIcon fontSize="small" />
-                </IconButton>
-              </Stack>
-            </Box>
-          </Box>
         </Stack>
       </Box>
 
 
-      <Box mt={5} >
-        <SmallText>What Government Schemes Are You Currently Receiving?<Typography component='span' color='red'>*</Typography> <Box component="br" />(Choose The Applicable One)</SmallText>
-        <Stack>
-          <Stack direction="row" alignItems="center">
-            <Checkbox defaultChecked sx={{
-              color: "#333333",
-              '&.Mui-checked': {
-                color: "#FF0000"
-                ,
-              },
-            }} /> <SchoolIcon />
-            <Typography component="div" ml={3}>Education Benefits</Typography>
-          </Stack>
-          <Stack direction="row" alignItems="center">
-            <Checkbox /> <ElderlyIcon />
-            <Typography component="div" ml={3}>Pension<Typography component='span'>( For Widows And Old Age )</Typography></Typography>
-          </Stack>
-          <Stack direction="row" alignItems="center">
-            <Checkbox /> <AssistWalkerIcon />
-            <Typography component="div" ml={3}>Pension For Disabled</Typography>
-          </Stack>
+      <Box mt={3}>
+        <SmallText>{t('futurevoters.futurelabel')}*<Typography component='span' color='red'>*</Typography></SmallText>
 
-          <Stack direction="row" alignItems="center">
-            <Checkbox defaultChecked sx={{
-              color: "#333333",
-              '&.Mui-checked': {
-                color: "#FF0000"
-                ,
-              },
-            }} /> <MedicalServicesIcon />
-            <Typography component="div" ml={3}>Medical Benefits</Typography>
-          </Stack>
 
-          <Stack direction="row" alignItems="center">
-            <Checkbox /> <GrassIcon />
-            <Typography component="div" ml={3}>Rythu Bandhu</Typography>
-          </Stack>
+        <Stack direction="row" spacing={2}>
 
-          <Stack direction="row" alignItems="center">
-            <Checkbox /> <RiceBowlIcon />
-            <Typography component="div" ml={3}>Ration</Typography>
-          </Stack>
+          {(t('futurevoters.genders', { returnObjects: true }) as Array<{ gendername: string }>).map((option, index) =>
+            <Box
+              key={index}
+              sx={{
+                border: '1px solid #C9C6C6',
+                borderRadius: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                px: 1.5,
+                py: 0.5,
+                gap: 1,
+                bgcolor: 'white',
+              }}
+            >
 
-          <Stack direction="row" alignItems="center">
-            <Checkbox /> <HomeIcon />
-            <Typography component="div" ml={3}>TIDCO Houses</Typography>
-
-          </Stack>
+              <Typography variant="body2" fontWeight={500}>
+                {option.gendername}
+              </Typography>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 0.5,
+                  borderLeft: '1px solid #C9C6C6',
+                  pl: 1,
+                }}
+              >
+                <Typography variant="body2">1</Typography>
+                <Stack spacing={-1}>
+                  <IconButton size="small" sx={{ p: 0.25 }}>
+                    <ArrowDropUpRoundedIcon fontSize="small" />
+                  </IconButton>
+                  <IconButton size="small" sx={{ p: 0.25 }}>
+                    <ArrowDropDownRoundedIcon fontSize="small" />
+                  </IconButton>
+                </Stack>
+              </Box>
+            </Box>)}
         </Stack>
       </Box>
+      <Box sx={{ mt: 3 }}>
+        <SmallText sx={{ width: { lg: '70%', xs: '100%', md: '100%' } }}>{t('govtschemes.schemeslabel')}<Typography component='span' color='red'>*</Typography>
+          <Typography component={'span'} sx={{ fontSize: '10px' }}>{t('govtschemes.choose')}</Typography>
+        </SmallText>
 
-      <Box mt={5} >
-        <Box >Additional Suggestions / Comments
-          <SmallText>(Please mention the issues you are facing with the government and what you expect from the JanaSena government)
-          </SmallText>
-        </Box>
-
-
+        <ListFields />
+      </Box>
+      <Box mt={2} >
+        <MiddleText sx={{ mb: 1 }}>Additional Suggestions / Comments</MiddleText>
+        <SmallText>(Please mention the issues you are facing with the government and what you expect from the JanaSena government)
+        </SmallText>
         <TextField
           label="Your Message"
           multiline
@@ -334,8 +214,14 @@ const Childtwo = () => {
           placeholder="Share your concerns regarding government policies, challenges you are facing, and your expectations from the JanaSena government..."
           fullWidth
           sx={{
-            borderRadius: '12px',
-            backgroundColor: '#fff',
+            mt:2,
+            "& .MuiInputBase-root": {
+              fontSize: "14px",
+            },
+            "& .MuiInputBase-input::placeholder": {
+              fontSize: "14px",
+              opacity: 0.9,
+            },
           }}
         />
 
