@@ -16,7 +16,7 @@ const Childtwo = () => {
    <Grid  size={{ xs: 12, md: 12, lg: 12 }}>
    <Box display="flex" flexDirection="row">
    <FormControl>
-  <SmallText>Employment Status<Typography variant='span' color='red'>*</Typography></SmallText>
+  <SmallText>Employment Status<Typography component='span' color='red'>*</Typography></SmallText>
   <RadioGroup row
     aria-labelledby="demo-radio-buttons-group-label"
     defaultValue="female"
@@ -63,7 +63,8 @@ const Childtwo = () => {
    <Grid  size={{ xs: 12, md: 12, lg: 12 }}>
    <Box display="flex" flexDirection="row">
    <FormControl>
-  <SmallText>Education<Typography variant='span' color='red'>*</Typography></SmallText>
+  <SmallText>Education<Typography component='span' color='red'>*</Typography><ErrorOutlineIcon sx={{ marginTop:"10px",color:'#889095' }} /></SmallText> 
+  
   <RadioGroup row
     aria-labelledby="demo-radio-buttons-group-label"
     defaultValue="female"
@@ -105,10 +106,10 @@ const Childtwo = () => {
 
   <Grid>
     <Stack display="flex" flexDirection="row" >
-    <SmallText>Total Members In The Family<Typography variant='span' color='red'>*</Typography>
+    <SmallText>Total Members In The Family<Typography component='span' color='red'>* </Typography>
     <Box component="br" />
     Including you
-    </SmallText>
+    </SmallText> <ErrorOutlineIcon sx={{ color:'#889095' }} />
     
     <ButtonGroup size="small" aria-label="Small button group" sx={{marginLeft:"30px"}}> 
     <Stack direction="row" spacing={2}>
@@ -121,8 +122,8 @@ const Childtwo = () => {
   </Grid>
 
   <Grid>
-  <SmallText>How Many Adults Above (18+ Years)?<Typography variant='span' color='red'>*</Typography></SmallText>
- 
+  <SmallText>How Many Adults Above (18+ Years)?<Typography component='span' color='red'>*</Typography></SmallText>
+  
   <Stack direction="row" spacing={2}>
   <ButtonGroup size="small" aria-label="Small button group"  >
       <Stack direction="row">
@@ -139,6 +140,31 @@ const Childtwo = () => {
       
       </Stack>  
       </ButtonGroup>
+      <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
+    </Stack>
+  </Grid>
+   
+  <Grid>
+  <SmallText>How Many Future Voters (7 - 17 Years)*<Typography component='span' color='red'>*</Typography>
+  </SmallText>
+  
+  <Stack direction="row" spacing={2}>
+  <ButtonGroup size="small" aria-label="Small button group"  >
+      <Stack direction="row">
+      <Button variant="outlined"  startIcon={<PersonIcon />}>
+        Boys
+        
+      </Button>
+      
+      </Stack>
+      <Stack  direction="row">
+    <Button variant="outlined" startIcon={<PersonIcon />} >
+      Girls
+      </Button>
+      
+      </Stack>  
+      </ButtonGroup>
+      <ErrorOutlineIcon sx={{ marginTop: '35px',color:'#889095' }} />
     </Stack>
   </Grid>
 
