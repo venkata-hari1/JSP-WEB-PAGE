@@ -13,6 +13,7 @@ import Select from './Select';
 import { setValue } from './Redux/Reducers/Language';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from './Redux/Store/store';
+import Childtwo from './Childtwo';
 export default function FormTwo() {
   const { t, i18n } = useTranslation();
   const { classes }: any = useStyles();
@@ -110,7 +111,7 @@ export default function FormTwo() {
         <Select/>
      
       </Grid>
-  
+      <Childtwo />
     </Grid>
 
     </RootContainer>
