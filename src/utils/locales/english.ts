@@ -105,7 +105,7 @@ export const English = {
        {class:"10th Class"},
        {class:"Intermediate"},
        {class:"Graduation"},
-       {class:"Postgraduation & Above"}
+       {class:"Postgraduation&Above"}
       ]
    },
    familymembers:{
